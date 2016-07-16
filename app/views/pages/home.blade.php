@@ -14,7 +14,7 @@
 	                        <div class="col-sms-6 col-sm-6 col-md-3">
 	                            <article class="box">
 	                                <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
-	                                    <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><img src={{$value->imgurl}} alt="" width="270" height="160" /></a>
+	                                    <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,$value->place) }}</a>
 	                                </figure>
 	                                <div class="details">
 	                                    <span class="price"><small>FROM</small>{{$value->price}}</span>
@@ -34,6 +34,7 @@
 	                        <h1 class="title">Popular Destinations for Honeymoon</h1>
 	                        <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque purusac Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
 	                        <div class="row places image-box style9">
+								@foreach($honeymoon as $value)
 	                            <div class="col-xs-4">
 	                                <article class="box">
 	                                    <figure>
@@ -41,33 +42,12 @@
 	                                            <img src="http://placehold.it/170x170" alt="" /></a>
 	                                    </figure>
 	                                    <div class="details">
-	                                        <h4 class="box-title">Paris<small>(990 PLACES)</small></h4>
+	                                        <h4 class="box-title">{{$value->place}}<small>{{$value->size}}</small></h4>
 	                                        <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
 	                                    </div>
 	                                </article>
 	                            </div>
-	                            <div class="col-xs-4">
-	                                <article class="box">
-	                                    <figure>
-	                                        <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1" data-animation-delay="0.4"><img src="http://placehold.it/170x170" alt="" /></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <h4 class="box-title">Greece<small>(990 PLACES)</small></h4>
-	                                        <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
-	                                    </div>
-	                                </article>
-	                            </div>
-	                            <div class="col-xs-4">
-	                                <article class="box">
-	                                    <figure>
-	                                        <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1" data-animation-delay="0.8"><img src="http://placehold.it/170x170" alt="" /></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <h4 class="box-title">Australia<small>(990 PLACES)</small></h4>
-	                                        <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
-	                                    </div>
-	                                </article>
-	                            </div>
+									@endforeach
 	                        </div>
 	                    </div>
 	                    <div class="col-sm-6 image-container no-margin">

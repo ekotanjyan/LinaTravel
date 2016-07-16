@@ -4,21 +4,11 @@
             <ul class="quick-menu pull-left">
                 <li><a href="#">My Account</a></li>
                 <li class="ribbon">
-                    <a href="#">English</a>
+                    <a href="#">{{trans('header.language')}}</a>
                     <ul class="menu mini">
-                        <li><a href="#" title="Dansk">Dansk</a></li>
-                        <li><a href="#" title="Deutsch">Deutsch</a></li>
-                        <li class="active"><a href="#" title="English">English</a></li>
-                        <li><a href="#" title="Español">Español</a></li>
-                        <li><a href="#" title="Français">Français</a></li>
-                        <li><a href="#" title="Italiano">Italiano</a></li>
-                        <li><a href="#" title="Magyar">Magyar</a></li>
-                        <li><a href="#" title="Nederlands">Nederlands</a></li>
-                        <li><a href="#" title="Norsk">Norsk</a></li>
-                        <li><a href="#" title="Polski">Polski</a></li>
-                        <li><a href="#" title="Português">Português</a></li>
-                        <li><a href="#" title="Suomi">Suomi</a></li>
-                        <li><a href="#" title="Svenska">Svenska</a></li>
+                        <li><a href="{{URL::to('/lang',['am'])}}">{{trans('header.armenian')}}</a></li>
+                        <li><a href="{{URL::to('/lang',['ru'])}}" title="Deutsch">{{trans('header.russian')}}</a></li>
+                        <li><a href="{{URL::to('/lang',['en'])}}" title="English">{{trans('header.english')}}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -59,19 +49,19 @@
             <nav id="main-menu" role="navigation">
                 <ul class="menu">
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/home')}}">Home</a>
+                        <a href="{{URL::to('/home')}}">{{trans('header.home')}}</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/tours')}}">Tours</a>
+                        <a href="{{URL::to('/tours')}}">{{trans('header.tours')}}</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/cruises')}}">Cruises</a>
+                        <a href="{{URL::to('/cruises')}}">{{trans('header.cruises')}}</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/aboutus')}}">About us</a>
+                        <a href="{{URL::to('/aboutus')}}">{{trans('header.aboutus')}}</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/contactus')}}">Contact us</a>
+                        <a href="{{URL::to('/contactus')}}">{{trans('header.contactus')}}</a>
                     </li>
                 </ul>
             </nav>

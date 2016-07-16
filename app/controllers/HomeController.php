@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+
 class HomeController extends BaseController {
 
 	/*
@@ -17,13 +20,26 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$data['destinations'] = Populardestinations::all();
+		$data['destinations'] = Populardestinations::orderBy('updated_at', 'desc')->take(4)->get();
+        $data['honeymoon'] = DB::table('populardestinations')->select(DB::raw('*,count(*) as size'))->groupBy('place')->orderBy('updated_at', 'desc')->take(3)->get();
 		return View::make('pages.home',$data);
+	}
+    public function a($lang = 0)
+    {
+$data['a'] =$lang;
+        return View::make('pages.a',$data);
+    }
+	public function lang($lang='en')
+	{
+		Session::put('lang',$lang);
+		App::setLocale($lang);
+		return Redirect::to('home');
 	}
 	public function tours()
 	{
 		$data['tours'] = Mostpopulartours::all();
 		$data['partners'] = Partners::all();
+        $data['last']= Mostpopulartours::orderBy('updated_at', 'desc')->take(6)->get();
 		return View::make('pages.tours',$data);
 	}
 	public function tours_upload()
@@ -38,17 +54,25 @@ class HomeController extends BaseController {
 		$s = imagecreatetruecolor($new_width, $new_height);
 		imagecopyresampled($s, $t, 0, 0, 0, 0, $new_width, $new_height, $x, $y);
 		$name = hash("md5", date("Y-m-d H:i:s"));
-		imagejpeg($s, "public/content/".$name, "100");
+		imagejpeg($s, "../public/content/".$name, "100");
 		
 		
 		
 		//Input::file('file')->move("public/content/", $name);
 		$tour = new Mostpopulartours;
-		$tour->name = Input::get('name');
-		$tour->price = Input::get('price');
+		$tour->name = htmlentities(Input::get('name'));
+		$tour->price = (int)Input::get('price');
 		$tour->imgurl = "content/".$name;
 		$tour->save();
 		return Redirect::to('tours');
+	}
+	public function login_form()
+	{
+        if (Input::get('name') == 'admin' && Input::get('password') == 'admin'){
+            Session::put('login','admin');
+        }
+
+		return Redirect::to('admin');
 	}
 	public function flights()
 	{
@@ -56,7 +80,8 @@ class HomeController extends BaseController {
 	}
 	public function cruises()
 	{
-		return View::make('pages.cruises');
+        $data['cruises'] = Populardestinations::orderBy('updated_at', 'desc')->take(4)->get();
+		return View::make('pages.cruises',$data);
 	}
 	public function aboutus()
 	{

@@ -7,138 +7,42 @@
 	                    <div id="main">
 	                        <h2>Last Minute Cruise Deals</h2>
 	                        <div class="row image-box style3 cruise listing-style1">
-	                            <div class="col-sm-6 col-md-3">
-	                                <article class="box">
-	                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-	                                        <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <span class="price"><small>from</small>$239</span>
-	                                        <h4 class="box-title">Baja Mexico<small>4 nights</small></h4>
-	                                        <div class="feedback">
-	                                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
-	                                            <span class="review">27 reviews</span>
-	                                        </div>
-	                                        <div class="row time">
-	                                            <div class="date col-xs-6">
-	                                                <i class="soap-icon-clock yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Date</span><br />Jan 26, 2014
-	                                                </div>
-	                                            </div>
-	                                            <div class="departure col-xs-6">
-	                                                <i class="soap-icon-departure yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Departure</span><br />Los Angeles
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
-	                                        <div class="action">
-	                                            <a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
-	                                        </div>
-	                                    </div>
-	                                </article>
-	                            </div>
-	                            <div class="col-sm-6 col-md-3">
-	                                <article class="box">
-	                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.3">
-	                                        <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <span class="price"><small>from</small>$299</span>
-	                                        <h4 class="box-title">Miami to Florida<small>4 nights</small></h4>
-	                                        <div class="feedback">
-	                                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
-	                                            <span class="review">27 reviews</span>
-	                                        </div>
-	                                        <div class="row time">
-	                                            <div class="date col-xs-6">
-	                                                <i class="soap-icon-clock yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Date</span><br />Jan 26, 2014
-	                                                </div>
-	                                            </div>
-	                                            <div class="departure col-xs-6">
-	                                                <i class="soap-icon-departure yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Departure</span><br />Los Angeles
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
-	                                        <div class="action">
-	                                            <a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
-	                                        </div>
-	                                    </div>
-	                                </article>
-	                            </div>
-	                            <div class="col-sm-6 col-md-3">
-	                                <article class="box">
-	                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.6">
-	                                        <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <span class="price"><small>from</small>$578</span>
-	                                        <h4 class="box-title">Jacksonville to Asia<small>4 nights</small></h4>
-	                                        <div class="feedback">
-	                                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
-	                                            <span class="review">27 reviews</span>
-	                                        </div>
-	                                        <div class="row time">
-	                                            <div class="date col-xs-6">
-	                                                <i class="soap-icon-clock yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Date</span><br />Jan 26, 2014
-	                                                </div>
-	                                            </div>
-	                                            <div class="departure col-xs-6">
-	                                                <i class="soap-icon-departure yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Departure</span><br />Los Angeles
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
-	                                        <div class="action">
-	                                            <a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
-	                                        </div>
-	                                    </div>
-	                                </article>
-	                            </div>
-	                            <div class="col-sm-6 col-md-3">
-	                                <article class="box">
-	                                    <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.9">
-	                                        <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-	                                    </figure>
-	                                    <div class="details">
-	                                        <span class="price"><small>from</small>$149</span>
-	                                        <h4 class="box-title">Hong Kong<small>4 nights</small></h4>
-	                                        <div class="feedback">
-	                                            <div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
-	                                            <span class="review">27 reviews</span>
-	                                        </div>
-	                                        <div class="row time">
-	                                            <div class="date col-xs-6">
-	                                                <i class="soap-icon-clock yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Date</span><br />Jan 26, 2014
-	                                                </div>
-	                                            </div>
-	                                            <div class="departure col-xs-6">
-	                                                <i class="soap-icon-departure yellow-color"></i>
-	                                                <div>
-	                                                    <span class="skin-color">Departure</span><br />Los Angeles
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
-	                                        <div class="action">
-	                                            <a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
-	                                        </div>
-	                                    </div>
-	                                </article>
-	                            </div>
+@foreach($cruises as $value)
+									<div class="col-sm-6 col-md-3">
+										<article class="box">
+											<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+												<a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="{{URL::to($value->imgurl)}}"></a>
+											</figure>
+											<div class="details">
+												<span class="price"><small>from</small>{{$value->price}}</span>
+												<h4 class="box-title">{{$value->name}}<small>4 nights</small></h4>
+												<div class="feedback">
+													<div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
+													<span class="review">27 reviews</span>
+												</div>
+												<div class="row time">
+													<div class="date col-xs-6">
+														<i class="soap-icon-clock yellow-color"></i>
+														<div>
+															<span class="skin-color">Date</span><br />Jan 26, 2014
+														</div>
+													</div>
+													<div class="departure col-xs-6">
+														<i class="soap-icon-departure yellow-color"></i>
+														<div>
+															<span class="skin-color">Departure</span><br />{{$value->place}}
+														</div>
+													</div>
+												</div>
+												<p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
+												<div class="action">
+													<a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
+												</div>
+											</div>
+										</article>
+									</div>
+	@endforeach
+
 	                        </div>
 	                    </div>
 
