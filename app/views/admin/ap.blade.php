@@ -39,7 +39,7 @@
                                     <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
                                   </form>
                                 </tr>
-                                @foreach($destinations as $value)
+                                @foreach($data as $value)
                                 <tr class="gradeA">
                                     <td>{{$value->name}}</td>
                                     <td>{{$value->place}}</td>

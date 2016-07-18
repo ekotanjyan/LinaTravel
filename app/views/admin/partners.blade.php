@@ -34,7 +34,7 @@
                                         <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
                                     </form>
                                 </tr>
-                                @foreach($partners as $value)
+                                @foreach($data as $value)
                                     <tr class="gradeA">
                                         <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
                                         <td>

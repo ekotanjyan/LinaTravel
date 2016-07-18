@@ -10,12 +10,23 @@ class AdminController extends BaseController
 {
     public function index()
     {
-        if(Input::get('r')=='tours')
-        $data['tours'] = Mostpopulartours::orderBy('updated_at', 'desc')->get();
-        elseif(Input::get('r')=='partners')
-        $data['partners'] = Partners::orderBy('updated_at', 'desc')->get();
-    else
-        $data['destinations'] = Populardestinations::orderBy('updated_at', 'desc')->get();
+        $arr = ['Mostpopulartours','Partners','Populardestinations'];
+        switch (Input::get('r')){
+            case 'tours':
+                $table = $arr[0];
+                break;
+            case 'partners':
+                $table = $arr[1];
+                break;
+            default:
+                $table = $arr[2];
+
+        }
+            if(Input::has('s'))
+                $data['data'] = $table::where('name', 'like', '%' . Input::get('s') . '%')->orderBy('updated_at', 'desc')->get();
+            else
+                $data['data'] = $table::orderBy('updated_at', 'desc')->get();
+
         return View::make('admin.admin',$data);
     }
     public function info()
