@@ -12,7 +12,9 @@ class AdminController extends BaseController
     {
         if(Input::get('r')=='tours')
         $data['tours'] = Mostpopulartours::orderBy('updated_at', 'desc')->get();
-        else
+        elseif(Input::get('r')=='partners')
+        $data['partners'] = Partners::orderBy('updated_at', 'desc')->get();
+    else
         $data['destinations'] = Populardestinations::orderBy('updated_at', 'desc')->get();
         return View::make('admin.admin',$data);
     }
@@ -30,10 +32,14 @@ class AdminController extends BaseController
         $table = Input::get('table');
         $ob = new $table;
         foreach (Input::get() as $key=>$value)
-            if($key!='table')
+            if($key!='table' && $key!='_token' && $key!='id')
             $ob->$key = $value;
-        $img = self::UploadImage(Input::file('file'));
-        $ob->imgurl = $img;
+
+        if (Input::file('file'))
+            $imgurl = self::UploadImage(Input::file('file'));
+        else
+            $imgurl = "/content/270.png";
+        $ob->imgurl = $imgurl;
         $ob->save();
         return Redirect::back();
 
@@ -60,7 +66,7 @@ class AdminController extends BaseController
 
             $ob = $table::find(Input::get('id'));
             foreach (Input::get() as $key=>$value)
-            if($key!='table' && $key!='id')
+                if($key!='table' && $key!='_token' && $key!='id')
                 $ob->$key = $value;
             $ob->imgurl = $imgurl;
             $ob->save();

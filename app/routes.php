@@ -25,3 +25,4 @@ Route::post('admin/update', 'AdminController@update');
 Route::post('admin/add', 'AdminController@add');
 Route::post('admin/delete', 'AdminController@delete');
 Route::post('tours_upload', 'HomeController@tours_upload');
+Route::post('contactus', 'HomeController@contactus');

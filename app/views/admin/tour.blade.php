@@ -1,4 +1,5 @@
 
+
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="row">
@@ -71,21 +72,25 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="exampleModalLabel">New message</h4>
                 </div><div class="modal-body">
-                    <form action="admin/update" method="post" lpformnum="2" enctype="multipart/form-data">
-                        <input type="hidden" class="form-control" name="id" id="id">
-                        <input type="hidden" class="form-control" name="table" value="Mostpopulartours">
-                        <div class="form-group">
-                            <label for="recipient-name" class="form-control-label">Name:</label>
-                            <input type="text" class="form-control" name="name" id="name"></div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="form-control-label">Price:</label>
-                            <input type="text" class="form-control" name="price" id="price"></div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="form-control-label">Image:</label>
-                            <input type="text" class="form-control"  name="imgurl" id="imgurl"></div>
-                        <input type="file" class="form-control"  name="file" id="file" accept="image/jpeg">
-                        <button type="submit" class="btn btn-primary" style="">Send message</button>
-                    </form>
+                    {{ Form::open(array('url' => 'admin/update','method'=>'post','enctype'=>'multipart/form-data')) }}
+                    {{Form::hidden('id', null,['id'=>'id','class'=>'form-control'])}}
+                    {{Form::hidden('table', 'Mostpopulartours',['class'=>'form-control'])}}
+                    <div class="form-group">
+                        {{Form::Label('name', 'Name:',['class'=>'form-control-label'])}}
+                        {{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::Label('price', 'Price:',['class'=>'form-control-label'])}}
+                        {{Form::text('price', null,['id'=>'price','class'=>'form-control'])}}
+                    </div>
+                    <div class="form-group">
+                        {{Form::Label('imgurl', 'Image:',['class'=>'form-control-label'])}}
+                        {{Form::text('imgurl', null,['id'=>'imgurl','class'=>'form-control'])}}
+                    </div>
+                    {{Form::file('file',['id'=>'file','class'=>'form-control','accept'=>'image/jpeg'])}}
+                    {{Form::submit('Update!',['class'=>'btn btn-primary'])}}
+                    {{ Form::close() }}
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

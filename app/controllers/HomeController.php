@@ -89,6 +89,11 @@ $data['a'] =$lang;
 	}
 	public function contactus()
 	{
+		if (Input::has('name') && Input::has('email') && Input::has('subject') && Input::has('message'))
+		{
+//			mail(Input::get('email'),Input::get('subject'),Input::get('message'));
+			return Redirect::back();
+		}
 		return View::make('pages.contactus');
 	}
 	public function ProportionalResize($old_width, $old_height, $new_width=false, $new_height=false) 

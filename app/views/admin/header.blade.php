@@ -35,6 +35,7 @@
     <!-- jQuery -->
     <script src="{{URL::asset('asset/js/jquery-1.11.1.min.js')}}"></script>
 </head><body>
+@if(Session::has('login'))
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <!-- /.navbar-header -->
@@ -58,6 +59,8 @@
                     <a href="admin"><i class="fa fa-dashboard fa-fw"></i>Destinations</a>
                 </li> <li>
                     <a href="admin?r=tours"><i class="fa fa-dashboard fa-fw"></i>Tours</a>
+                </li><li>
+                    <a href="admin?r=partners"><i class="fa fa-dashboard fa-fw"></i>Partners</a>
                 </li>
             </ul>
         </div>
@@ -65,3 +68,4 @@
     </div>
     <!-- /.navbar-static-side -->
 </nav>
+    @endif

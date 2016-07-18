@@ -1,9 +1,10 @@
 
+
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Destinations</h1>
+                <h1 class="page-header">Partners</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -11,18 +12,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    {{--<div class="panel-heading">--}}
-                        {{--DataTables Advanced Tables--}}
-                    {{--</div>--}}
-                    <!-- /.panel-heading -->
+                {{--<div class="panel-heading">--}}
+                {{--DataTables Advanced Tables--}}
+                {{--</div>--}}
+                <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Place</th>
-                                    <th>Price</th>
                                     <th>Image</th>
                                     <th>Edit</th>
                                 </tr>
@@ -31,35 +29,29 @@
 
                                 <tr class="gradeA">
                                     <form action="admin/add" method="post" lpformnum="2" enctype="multipart/form-data">
-                                        <input type="hidden" class="form-control" name="table" id="table" value="Populardestinations">
-                                    <td><input type="text" class="form-control" name="name" id="name"></td>
-                                    <td><input type="text" class="form-control" name="place" id="place"></td>
-                                    <td><input type="text" class="form-control" name="price" id="price"></td>
-                                    <td><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
-                                    <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
-                                  </form>
+                                        <input type="hidden" class="form-control" name="table" id="table" value="Partners">
+                                        <td><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
+                                        <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
+                                    </form>
                                 </tr>
-                                @foreach($destinations as $value)
-                                <tr class="gradeA">
-                                    <td>{{$value->name}}</td>
-                                    <td>{{$value->place}}</td>
-                                    <td>{{$value->price}}</td>
-                                    <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="populardestinations" data-toggle="modal" data-target="#myModal">Edit</button>
-                                        <form action="admin/delete" method="post">
-                                            <input type="hidden" name="id" value="{{$value->id}}">
-                                            <input type="hidden" name="table" value="Populardestinations">
-                                            <button type="submit" class="btn btn-danger btn-lg" data-table="populardestinations">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                @foreach($partners as $value)
+                                    <tr class="gradeA">
+                                        <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="partners" data-toggle="modal" data-target="#myModal">Edit</button>
+                                            <form action="admin/delete" method="post">
+                                                <input type="hidden" name="id" value="{{$value->id}}">
+                                                <input type="hidden" name="table" value="Partners">
+                                                <button type="submit" class="btn btn-danger btn-lg" data-table="partners">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                                   </div>
+                    </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
@@ -74,22 +66,9 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="exampleModalLabel">New message</h4>
                 </div><div class="modal-body">
-
                     {{ Form::open(array('url' => 'admin/update','method'=>'post','enctype'=>'multipart/form-data')) }}
                     {{Form::hidden('id', null,['id'=>'id','class'=>'form-control'])}}
-                    {{Form::hidden('table', 'Populardestinations',['class'=>'form-control'])}}
-                    <div class="form-group">
-                        {{Form::Label('name', 'Name:',['class'=>'form-control-label'])}}
-                        {{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}
-                    </div>
-                    <div class="form-group">
-                        {{Form::Label('place', 'Place:',['class'=>'form-control-label'])}}
-                        {{Form::text('place', null,['id'=>'place','class'=>'form-control'])}}
-                    </div>
-                    <div class="form-group">
-                        {{Form::Label('price', 'Price:',['class'=>'form-control-label'])}}
-                        {{Form::text('price', null,['id'=>'price','class'=>'form-control'])}}
-                    </div>
+                    {{Form::hidden('table', 'Partners',['class'=>'form-control'])}}
                     <div class="form-group">
                         {{Form::Label('imgurl', 'Image:',['class'=>'form-control-label'])}}
                         {{Form::text('imgurl', null,['id'=>'imgurl','class'=>'form-control'])}}
@@ -97,6 +76,7 @@
                     {{Form::file('file',['id'=>'file','class'=>'form-control','accept'=>'image/jpeg'])}}
                     {{Form::submit('Update!',['class'=>'btn btn-primary'])}}
                     {{ Form::close() }}
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -123,9 +103,6 @@
                     .done(function(msg) {
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
-                        a.find('#name').val(msg.name);
-                        a.find('#place').val(msg.place);
-                        a.find('#price').val(msg.price);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
 
