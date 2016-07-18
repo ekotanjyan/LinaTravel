@@ -1,5 +1,5 @@
 <header id="header" class="navbar-static-top">
-    <div class="topnav hidden-xs">
+    <div class="topnav hidden-xs" style="display: none;">
         <div class="container">
             <ul class="quick-menu pull-left">
                 <li><a href="#">My Account</a></li>
@@ -50,28 +50,28 @@
     
     <div class="main-header">   
         <div class="container">
-            <h1 class="logo navbar-brand">
-                <a href="index.html" title="Travelo - home">
-                    <img src="{{URL::asset('asset/images/logo.png')}}" alt="Travelo HTML5 Template" />
+            <h3 class="navbar-brand" style="padding: 2px 0px !important; height: 59px !important;">
+                <a href="#" title="Lina Travel - home">
+                    <img src="{{URL::asset('asset/images/linatravel.png')}}" alt="LinaTravel HTML5 Template" style="height: 72px"/>
                 </a>
-            </h1>
+            </h3>
 
             <nav id="main-menu" role="navigation">
                 <ul class="menu">
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/home')}}">Home</a>
+                        <a href="{{URL::to('/home')}}">Գլխավոր</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/tours')}}">Tours</a>
+                        <a href="{{URL::to('/tours')}}">Տուրեր</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/cruises')}}">Cruises</a>
+                        <a href="{{URL::to('/cruises')}}">Արշավներ</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/aboutus')}}">About us</a>
+                        <a href="{{URL::to('/aboutus')}}">Մեր մասին</a>
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="{{URL::to('/contactus')}}">Contact us</a>
+                        <a href="{{URL::to('/contactus')}}">Հետադարձ կապ</a>
                     </li>
                 </ul>
             </nav>

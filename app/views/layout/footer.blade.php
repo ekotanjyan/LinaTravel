@@ -84,7 +84,7 @@
         <div class="container">
             <div class="logo pull-left">
                 <a href="index.html" title="Travelo - home">
-                    <img src="{{URL::asset('asset/images/logo.png')}}" alt="Travelo HTML5 Template" />
+                    <img src="{{URL::asset('asset/images/linatravel.png')}}"/>
                 </a>
             </div>
             <div class="pull-right">

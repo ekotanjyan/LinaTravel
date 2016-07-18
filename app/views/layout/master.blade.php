@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('asset/components/flexslider/flexslider.css')}}" media="screen" />
     
     <!-- Main Style -->
-    <link id="main-style" rel="stylesheet" href="{{URL::asset('asset/css/style.css')}}">
+    <link id="main-style" rel="stylesheet" href="{{URL::asset('asset/css/main_style.css')}}">
     
     <!-- Custom Styles -->
     <link rel="stylesheet" href="{{URL::asset('asset/css/custom.css')}}">
