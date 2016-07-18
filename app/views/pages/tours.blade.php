@@ -211,6 +211,7 @@
 		            <div class="image-carousel style2 flexslider" data-animation="slide" data-item-width="270" data-item-margin="30">
 		                
 		            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides tour-locations" style="width: 1000%; transition-duration: 0s; transform: translate3d(-300px, 0px, 0px);">
+							@foreach($last as $value)
 		                    <li style="width: 270px; float: left; display: block;">
 		                        <article class="box">
 		                            <figure>
@@ -219,15 +220,9 @@
 		                                </a>
 		                            </figure>
 		                            <div class="details">
-		                                <span class="price">$620</span>
-		                                <h4 class="box-title">Hawaii City Tour</h4>
+		                                <span class="price">{{$value->price}}</span>
+		                                <h4 class="box-title">{{$value->name}}</h4>
 		                                <hr>
-		                                <ul class="features check">
-		                                    <li>City Tour In 3 Hours</li>
-		                                    <li>Enjoy World Famous Restaurant</li>
-		                                    <li>Wine Tester Trips</li>
-		                                    <li>Night Street Life in Downtown </li>
-		                                </ul>
 		                                <hr>
 		                                <div class="text-center">
 		                                    <div class="time">
@@ -239,118 +234,7 @@
 		                            </div>
 		                        </article>
 		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
-		                                    <img src="{{URL::asset('asset/images/tours/2(2).jpg')}}" alt="" draggable="false">
-		                                </a>
-		                            </figure>
-		                            <div class="details">
-		                                <span class="price">$534</span>
-		                                <h4 class="box-title">Italy Family Tour</h4>
-		                                <hr>
-		                                <ul class="features check">
-		                                    <li>City Tour In 3 Hours</li>
-		                                    <li>Enjoy World Famous Restaurant</li>
-		                                    <li>Wine Tester Trips</li>
-		                                    <li>Night Street Life in Downtown </li>
-		                                </ul>
-		                                <hr>
-		                                <div class="text-center">
-		                                    <div class="time">
-		                                        <i class="soap-icon-clock yellow-color"></i>
-		                                        <span>01 Nov 2014 - 08 Nov 2014</span>
-		                                    </div>
-		                                </div>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="button btn-small full-width">BOOK NOW</a>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
-		                                    <img src="{{URL::asset('asset/images/tours/3(2).jpg')}}" alt="" draggable="false">
-		                                </a>
-		                            </figure>
-		                            <div class="details">
-		                                <span class="price">$718</span>
-		                                <h4 class="box-title">Chicago Long Tour</h4>
-		                                <hr>
-		                                <ul class="features check">
-		                                    <li>City Tour In 3 Hours</li>
-		                                    <li>Enjoy World Famous Restaurant</li>
-		                                    <li>Wine Tester Trips</li>
-		                                    <li>Night Street Life in Downtown </li>
-		                                </ul>
-		                                <hr>
-		                                <div class="text-center">
-		                                    <div class="time">
-		                                        <i class="soap-icon-clock yellow-color"></i>
-		                                        <span>01 Nov 2014 - 08 Nov 2014</span>
-		                                    </div>
-		                                </div>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="button btn-small full-width">BOOK NOW</a>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
-		                                    <img src="{{URL::asset('asset/images/tours/4(2).jpg')}}" alt="" draggable="false">
-		                                </a>
-		                            </figure>
-		                            <div class="details">
-		                                <span class="price">$426</span>
-		                                <h4 class="box-title">Sydney Tour</h4>
-		                                <hr>
-		                                <ul class="features check">
-		                                    <li>City Tour In 3 Hours</li>
-		                                    <li>Enjoy World Famous Restaurant</li>
-		                                    <li>Wine Tester Trips</li>
-		                                    <li>Night Street Life in Downtown </li>
-		                                </ul>
-		                                <hr>
-		                                <div class="text-center">
-		                                    <div class="time">
-		                                        <i class="soap-icon-clock yellow-color"></i>
-		                                        <span>01 Nov 2014 - 08 Nov 2014</span>
-		                                    </div>
-		                                </div>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="button btn-small full-width">BOOK NOW</a>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
-		                                    <img src="{{URL::asset('asset/images/tours/5(1).jpg')}}" alt="" draggable="false">
-		                                </a>
-		                            </figure>
-		                            <div class="details">
-		                                <span class="price">$620</span>
-		                                <h4 class="box-title">Florida Tour</h4>
-		                                <hr>
-		                                <ul class="features check">
-		                                    <li>City Tour In 3 Hours</li>
-		                                    <li>Enjoy World Famous Restaurant</li>
-		                                    <li>Wine Tester Trips</li>
-		                                    <li>Night Street Life in Downtown </li>
-		                                </ul>
-		                                <hr>
-		                                <div class="text-center">
-		                                    <div class="time">
-		                                        <i class="soap-icon-clock yellow-color"></i>
-		                                        <span>01 Nov 2014 - 08 Nov 2014</span>
-		                                    </div>
-		                                </div>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="button btn-small full-width">BOOK NOW</a>
-		                            </div>
-		                        </article>
-		                    </li>
+								@endforeach
 		                </ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="http://www.soaptheme.net/html/travelo/tour-index.html#">Previous</a></li><li><a class="flex-next" href="http://www.soaptheme.net/html/travelo/tour-index.html#">Next</a></li></ul></div>
 		        </div>
 		    </div>

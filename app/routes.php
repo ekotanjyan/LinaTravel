@@ -10,10 +10,19 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/', 'HomeController@index'); 
+Route::get('/', 'HomeController@index');
+Route::get('a', 'HomeController@a');
+Route::get('lang/{lang?}', 'HomeController@lang');
 Route::get('home', 'HomeController@index');
 Route::get('tours', 'HomeController@tours');
 Route::get('cruises', 'HomeController@cruises');
 Route::get('aboutus', 'HomeController@aboutus');
 Route::get('contactus', 'HomeController@contactus');
+Route::get('admin', 'AdminController@index');
+Route::post('login_form', 'HomeController@login_form');
+Route::post('admin/info', 'AdminController@info');
+Route::post('admin/update', 'AdminController@update');
+Route::post('admin/add', 'AdminController@add');
+Route::post('admin/delete', 'AdminController@delete');
 Route::post('tours_upload', 'HomeController@tours_upload');
+Route::post('contactus', 'HomeController@contactus');

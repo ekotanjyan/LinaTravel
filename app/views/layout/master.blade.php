@@ -1,3 +1,4 @@
+{{App::setLocale(Session::get('lang'))}}
 <html>
 <head>
     <meta charset="utf-8">

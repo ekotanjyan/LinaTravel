@@ -36,34 +36,36 @@
             <div class="travelo-box box-full">
                 <div class="contact-form">
                     <h2>Send us a Message</h2>
-                    <form action="contact-us-handler.php" method="post">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label>Your Name</label>
-                                    <input type="text" name="name" class="input-text full-width">
-                                </div>
-                                <div class="form-group">
-                                    <label>Your Email</label>
-                                    <input type="text" name="email" class="input-text full-width">
-                                </div>
-                                <div class="form-group">
-                                    <label>Subject</label>
-                                    <input type="text" name="subject" class="input-text full-width">
-                                </div>
+                    {{ Form::open(array('url' => 'contactus','method'=>'post')) }}
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                {{Form::Label('name', 'Your Name')}}
+                                {{Form::text('name', null,['class'=>'input-text full-width'])}}
                             </div>
-                            <div class="col-sm-8">
-                                <div class="form-group">
-                                    <label>Your Message</label>
-                                    <textarea name="message" rows="8" class="input-text full-width" placeholder="write message here"></textarea>
-                                </div>
+                            <div class="form-group">
+                                {{Form::Label('email', 'Your Email')}}
+                                {{Form::text('email', null,['class'=>'input-text full-width'])}}
+                            </div>
+                            <div class="form-group">
+                                {{Form::Label('subject', 'Subject')}}
+                                {{Form::text('subject', null,['class'=>'input-text full-width'])}}
                             </div>
                         </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    {{Form::Label('message', 'Your Message')}}
+                                    {{Form::textarea('message', null,['class'=>'input-text full-width','placeholder'=>'write message here'])}}
+                                </div>
+                            </div>
+
 
                         <div class="col-sms-offset-6 col-sm-offset-6 col-md-offset-8 col-lg-offset-9">
                             <button class="btn-medium full-width">SEND MESSAGE</button>
                         </div>
-                    </form>
+
+                        {{ Form::close() }}
                 </div>
             </div>
         </div>
