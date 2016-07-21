@@ -11,7 +11,6 @@
 |
 */
 Route::get('/', 'HomeController@index');
-Route::get('a', 'HomeController@a');
 Route::get('lang/{lang?}', 'HomeController@lang');
 Route::get('home', 'HomeController@index');
 Route::get('tours', 'HomeController@tours');

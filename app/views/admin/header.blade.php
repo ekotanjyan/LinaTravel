@@ -62,6 +62,12 @@
                     <a href="admin?r=tours"><i class="fa fa-dashboard fa-fw"></i>Tours</a>
                 </li><li>
                     <a href="admin?r=partners"><i class="fa fa-dashboard fa-fw"></i>Partners</a>
+                </li><li>
+                    <a href="admin?r=didyouknow"><i class="fa fa-dashboard fa-fw"></i>Info</a>
+                </li><li>
+                    <a href="admin?r=cruises"><i class="fa fa-dashboard fa-fw"></i>Cruises</a>
+                </li><li>
+                    <a href="admin?r=about"><i class="fa fa-dashboard fa-fw"></i>About</a>
                 </li>
             </ul>
         </div>

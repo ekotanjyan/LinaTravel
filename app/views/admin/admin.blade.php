@@ -7,7 +7,13 @@
     @include('admin.tour')
 @elseif(Input::get('r')=='partners')
     @include('admin.partners')
-    @else
+@elseif(Input::get('r')=='didyouknow')
+    @include('admin.didyouknow')
+@elseif(Input::get('r')=='cruises')
+    @include('admin.cruises')
+@elseif(Input::get('r')=='about')
+    @include('admin.about')
+@else
     @include('admin.ap')
 @endif
 

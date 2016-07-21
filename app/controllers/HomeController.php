@@ -20,15 +20,12 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$data['destinations'] = Populardestinations::orderBy('updated_at', 'desc')->take(4)->get();
-        $data['honeymoon'] = DB::table('populardestinations')->select(DB::raw('*,count(*) as size'))->groupBy('place')->orderBy('updated_at', 'desc')->take(3)->get();
-		return View::make('pages.home',$data);
+		$data['destinations'] = Populardestinations::where('category',0)->orderBy('updated_at', 'desc')->get();
+		$data['honeymoon'] = Populardestinations::where('category',1)->orderBy('updated_at', 'desc')->get();
+		$data['didyouknow'] = didyouknow::where('category',0)->orderBy('updated_at', 'desc')->get();
+		$data['features'] = didyouknow::where('category',1)->orderBy('updated_at', 'desc')->get();
+       	return View::make('pages.home',$data);
 	}
-    public function a($lang = 0)
-    {
-$data['a'] =$lang;
-        return View::make('pages.a',$data);
-    }
 	public function lang($lang='en')
 	{
 		Session::put('lang',$lang);
@@ -37,9 +34,11 @@ $data['a'] =$lang;
 	}
 	public function tours()
 	{
-		$data['tours'] = Mostpopulartours::all();
+		$data['mostpopulartours'] = Mostpopulartours::where('category',0)->orderBy('updated_at', 'desc')->get();
+		$data['lastminutepackages'] = Mostpopulartours::where('category',1)->orderBy('updated_at', 'desc')->get();
 		$data['partners'] = Partners::all();
-        $data['last']= Mostpopulartours::orderBy('updated_at', 'desc')->take(6)->get();
+		$data['didyouknow'] = didyouknow::where('category',2)->orderBy('updated_at', 'desc')->get();
+		        $data['last']= Mostpopulartours::orderBy('updated_at', 'desc')->take(6)->get();
 		return View::make('pages.tours',$data);
 	}
 	public function tours_upload()
@@ -80,12 +79,17 @@ $data['a'] =$lang;
 	}
 	public function cruises()
 	{
-        $data['cruises'] = Populardestinations::orderBy('updated_at', 'desc')->take(4)->get();
+        $data['lastminutecruisedeals'] = cruises::where('category',0)->orderBy('updated_at', 'desc')->get();
+        $data['topcruiselinedeals'] = cruises::where('category',1)->orderBy('updated_at', 'desc')->get();
+        $data['hotcruisesdeals'] = cruises::where('category',2)->orderBy('updated_at', 'desc')->get();
 		return View::make('pages.cruises',$data);
 	}
 	public function aboutus()
 	{
-		return View::make('pages.aboutus');
+		$data['aboutus'] = about::where('category',0)->orderBy('updated_at', 'desc')->get();
+		$data['travelodedicatedteam'] = about::where('category',1)->orderBy('updated_at', 'desc')->get();
+		$data['checkourinvestorsrelations'] = about::where('category',2)->orderBy('updated_at', 'desc')->get();
+		return View::make('pages.aboutus',$data);
 	}
 	public function contactus()
 	{

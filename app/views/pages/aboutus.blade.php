@@ -4,33 +4,17 @@
             <div class="container">
                 <div id="main">
                     <div class="large-block image-box style6">
+                        @foreach($aboutus as $value)
                         <article class="box">
                             <figure class="col-md-5">
-                                <a href="#" title="" class="middle-block"><img class="middle-item" src="http://placehold.it/476x318" alt="" width="476" height="318" /></a>
+                                <a href="#" title="" class="middle-block"><img class="middle-item" src="{{URL::asset($value->imgurl)}}" width="476" height="318" /></a>
                             </figure>
                             <div class="details col-md-offset-5">
-                                <h4 class="box-title">Who We Are?</h4>
-                                <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
+                                <h4 class="box-title">{{$value->name}}</h4>
+                                <p>{{$value->description}}</p>
                             </div>
                         </article>
-                        <article class="box">
-                            <figure class="col-md-5 pull-right middle-block">
-                                <a href="#" title=""><img class="middle-item" src="http://placehold.it/476x318" alt="" width="476" height="318" /></a>
-                            </figure>
-                            <div class="details col-md-7">
-                                <h4 class="box-title">What We Do?</h4>
-                                <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
-                            </div>
-                        </article>
-                        <article class="box">
-                            <figure class="col-md-5">
-                                <a href="#" title="" class="middle-block"><img class="middle-item" src="http://placehold.it/489x489" alt="" /></a>
-                            </figure>
-                            <div class="details col-md-offset-5">
-                                <h4 class="box-title">How Travelo Work?</h4>
-                                <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
-                            </div>
-                        </article>
+                            @endforeach
                     </div>
 
                     <div class="row large-block">
@@ -105,14 +89,15 @@ Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum
                     <div class="large-block">
                         <h2>Travelo Dedicated Team</h2>
                         <div class="row image-box style1 team">
+                            @foreach($travelodedicatedteam as $value)
                             <div class="col-sm-6 col-md-3">
                                 <article class="box">
                                     <figure>
-                                        <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263" /></a>
+                                        <a href="#"><img src="{{URL::asset($value->imgurl)}}" alt="" width="270" height="263" /></a>
                                     </figure>
                                     <div class="details">
-                                        <h4 class="box-title"><a href="#">Jessica Brown<small>Chief Executive</small></a></h4>
-                                        <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                        <h4 class="box-title"><a href="#">{{$value->name}}</a></h4>
+                                        <p class="description">{{$value->description}}</p>
                                         <ul class="social-icons clearfix">
                                             <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
                                             <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
@@ -124,63 +109,7 @@ Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum
                                     </div>
                                 </article>
                             </div>
-                            <div class="col-sm-6 col-md-3">
-                                <article class="box">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <h4 class="box-title"><a href="#">David Jackson<small>Director - Hotels</small></a></h4>
-                                        <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                        <ul class="social-icons clearfix">
-                                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
-                                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
-                                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <article class="box">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <h4 class="box-title"><a href="#">Kyle Martin<small>Chief Operating Officer</small></a></h4>
-                                        <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                        <ul class="social-icons clearfix">
-                                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
-                                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
-                                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <article class="box">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/270x263" alt="" width="270" height="263" /></a>
-                                    </figure>
-                                    <div class="details">
-                                        <h4 class="box-title"><a href="#">David Robets<small>Founder &amp; Director</small></a></h4>
-                                        <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
-                                        <ul class="social-icons clearfix">
-                                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
-                                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
-                                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -188,36 +117,13 @@ Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum
                         <h2>Check our Investors Relations</h2>
                         <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa idend porta nequetiam</p>
                         <div class="investor-list row">
+                            @foreach($checkourinvestorsrelations as $value)
                             <div class="col-xs-6 col-sm-4 col-lg-2">
                                 <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
+                                    <a href="#"><img src="{{URL::asset($value->imgurl)}}" title="{{$value->name}}"></a>
                                 </div>
                             </div>
-                            <div class="col-xs-6 col-sm-4 col-lg-2">
-                                <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-lg-2">
-                                <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-lg-2">
-                                <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-lg-2">
-                                <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="col-xs-6 col-sm-4 col-lg-2">
-                                <div class="travelo-box">
-                                    <a href="#"><img src="http://placehold.it/160x60" alt=""></a>
-                                </div>
-                            </div>
+                        @endforeach
                         </div>
                     </div>
                 </div>

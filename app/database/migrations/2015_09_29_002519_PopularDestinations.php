@@ -19,6 +19,7 @@ class PopularDestinations extends Migration {
             $table->string('place', 255);
             $table->string('price', 15);
             $table->string('imgurl', 255);
+			$table->integer('category');
             $table->timestamps();
         });
     }

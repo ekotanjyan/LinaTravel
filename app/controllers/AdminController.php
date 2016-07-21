@@ -10,7 +10,7 @@ class AdminController extends BaseController
 {
     public function index()
     {
-        $arr = ['Mostpopulartours','Partners','Populardestinations'];
+        $arr = ['Mostpopulartours','Partners','didyouknow','cruises','about','Populardestinations'];
         switch (Input::get('r')){
             case 'tours':
                 $table = $arr[0];
@@ -18,13 +18,22 @@ class AdminController extends BaseController
             case 'partners':
                 $table = $arr[1];
                 break;
-            default:
+            case "didyouknow":
                 $table = $arr[2];
+                break;
+            case "cruises":
+                $table = $arr[3];
+                break;
+            case "about":
+                $table = $arr[4];
+                break;
+            default:
+                $table = $arr[5];
 
         }
-            if(Input::has('s'))
-                $data['data'] = $table::where('name', 'like', '%' . Input::get('s') . '%')->orderBy('updated_at', 'desc')->get();
-            else
+//            if(Input::has('s'))
+//                $data['data'] = $table::where('name', 'like', '%' . Input::get('s') . '%')->orderBy('updated_at', 'desc')->get();
+//            else
                 $data['data'] = $table::orderBy('updated_at', 'desc')->get();
 
         return View::make('admin.admin',$data);
@@ -42,20 +51,35 @@ class AdminController extends BaseController
     {
         $table = Input::get('table');
         $ob = new $table;
-        foreach (Input::get() as $key=>$value)
-            if($key!='table' && $key!='_token' && $key!='id')
-            $ob->$key = $value;
+        $size = self::Size($table,Input::get('category'));
 
         if (Input::file('file'))
-            $imgurl = self::UploadImage(Input::file('file'));
+            $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
         else
             $imgurl = "/content/270.png";
         $ob->imgurl = $imgurl;
+        foreach (Input::get() as $key=>$value)
+            if($key!='table' && $key!='_token' && $key!='id' && !empty($key))
+            $ob->$key = $value;
+
         $ob->save();
         return Redirect::back();
 
     }
 
+    public static function Size($table,$category){
+        if($table=='about' && $category=='0'){
+            $data[0] = '476';
+            $data[1] = '318';
+        }elseif ($table=='about' && $category=='2'){
+            $data[0]  = '160';
+            $data[1] = '60';
+        }else{
+            $data[0]  = '270';
+            $data[1] = '161';
+        }
+        return $data;
+    }
     public function delete()
     {
         $table =Input::get('table');
@@ -72,12 +96,13 @@ class AdminController extends BaseController
             $imgurl = Input::get('imgurl');
         else
             $imgurl = "/content/270.png";
+        $size = self::Size($table,Input::get('category'));
             if (Input::file('file'))
-                $imgurl = self::UploadImage(Input::file('file'));
+                $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
 
             $ob = $table::find(Input::get('id'));
             foreach (Input::get() as $key=>$value)
-                if($key!='table' && $key!='_token' && $key!='id')
+                if($key!='table' && $key!='_token' && $key!='id' && !empty($key))
                 $ob->$key = $value;
             $ob->imgurl = $imgurl;
             $ob->save();
@@ -86,11 +111,11 @@ class AdminController extends BaseController
             return Redirect::back();
 
     }
-    public static function UploadImage($img){
+    public static function UploadImage($img,$newwidth,$newheight){
         $name = hash("md5", date("Y-m-d H:i:s"));
 
         list($width, $height) = getimagesize($img);
-        $new_sizes = self::ProportionalResize($width, $height, "270", "161");
+        $new_sizes = self::ProportionalResize($width, $height, $newwidth, $newheight);
         $newwidth = $new_sizes[0];
         $newheight = $new_sizes[1];
         $thumb = imagecreatetruecolor($newwidth, $newheight);

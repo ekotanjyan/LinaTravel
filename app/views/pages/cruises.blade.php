@@ -7,7 +7,7 @@
 	                    <div id="main">
 	                        <h2>Last Minute Cruise Deals</h2>
 	                        <div class="row image-box style3 cruise listing-style1">
-@foreach($cruises as $value)
+@foreach($lastminutecruisedeals as $value)
 									<div class="col-sm-6 col-md-3">
 										<article class="box">
 											<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
@@ -91,50 +91,19 @@
 	                            <div class="travelo-box cruise-line-deals image-box style1">
 	                                <div class="overflow-hidden">
 	                                    <div class="row">
+											@foreach($topcruiselinedeals as $value)
 	                                        <div class="col-sms-6 col-sm-6">
 	                                            <div class="box">
 	                                                <figure class="animated" data-animation-type="fadeIn" data-animation-delay="0">
-	                                                    <span class="image-wrapper"><img src="http://placehold.it/300x80" alt=""></span>
+	                                                    <span class="image-wrapper">{{ HTML::image($value->imgurl) }}</span>
 	                                                </figure>
 	                                                <div class="details">
 	                                                    <span class="price"><small>3 nights</small>$169</span>
-	                                                    <h5 class="box-title"><a href="#">Norwegian Cruise Line</a><small>Up to $400 OFF!</small></h5>
+	                                                    <h5 class="box-title"><a href="#">{{$value->name}}</a><small>Up to $400 OFF!</small></h5>
 	                                                </div>
 	                                            </div>
 	                                        </div>
-	                                        <div class="col-sms-6 col-sm-6">
-	                                            <div class="box">
-	                                                <figure class="animated" data-animation-type="fadeIn" data-animation-delay="0.3">
-	                                                    <span class="image-wrapper"><img src="http://placehold.it/300x80" alt=""></span>
-	                                                </figure>
-	                                                <div class="details">
-	                                                    <span class="price"><small>3 nights</small>$169</span>
-	                                                    <h5 class="box-title"><a href="#">Norwegian Cruise Line</a><small>Up to $400 OFF!</small></h5>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <div class="col-sms-6 col-sm-6">
-	                                            <div class="box">
-	                                                <figure class="animated" data-animation-type="fadeIn" data-animation-delay="0.6">
-	                                                    <span class="image-wrapper"><img src="http://placehold.it/300x80" alt=""></span>
-	                                                </figure>
-	                                                <div class="details">
-	                                                    <span class="price"><small>3 nights</small>$169</span>
-	                                                    <h5 class="box-title"><a href="#">Norwegian Cruise Line</a><small>Up to $400 OFF!</small></h5>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                        <div class="col-sms-6 col-sm-6">
-	                                            <div class="box">
-	                                                <figure class="animated" data-animation-type="fadeIn" data-animation-delay="0.9">
-	                                                    <span class="image-wrapper"><img src="http://placehold.it/300x80" alt=""></span>
-	                                                </figure>
-	                                                <div class="details">
-	                                                    <span class="price"><small>3 nights</small>$169</span>
-	                                                    <h5 class="box-title"><a href="#">Norwegian Cruise Line</a><small>Up to $400 OFF!</small></h5>
-	                                                </div>
-	                                            </div>
-	                                        </div>
+											@endforeach
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -143,76 +112,22 @@
 	                    <h2>Hot Cruises Deals</h2>
 	                    <div class="image-carousel style2" data-animation="slide" data-item-width="270" data-item-margin="30">
 	                        <ul class="slides image-box style3">
+								@foreach($hotcruisesdeals as $value)
 	                            <li class="box">
 	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title=""><img src="http://placehold.it/270x160" alt="" width="270" height="160"></a>
+	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title="">{{ HTML::image($value->imgurl) }}</a>
 	                                </figure>
 	                                <div class="details text-center">
-	                                    <h4 class="box-title">Greece</h4>
+	                                    <h4 class="box-title">{{$value->name}}</h4>
 	                                    <p class="offers-content">(15 deal offers)</p>
 	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
 	                                        <span class="five-stars" style="width: 80%;"></span>
 	                                    </div>
-	                                    <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+	                                    <p class="description">{{$value->description}}</p>
 	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
 	                                </div>
 	                            </li>
-	                            <li class="box">
-	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title=""><img src="http://placehold.it/270x160" alt="" width="270" height="160"></a>
-	                                </figure>
-	                                <div class="details text-center">
-	                                    <h4 class="box-title">Singapore</h4>
-	                                    <p class="offers-content">(15 deal offers)</p>
-	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
-	                                        <span class="five-stars" style="width: 80%;"></span>
-	                                    </div>
-	                                    <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
-	                                </div>
-	                            </li>
-	                            <li class="box">
-	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title=""><img src="http://placehold.it/270x160" alt="" width="270" height="160"></a>
-	                                </figure>
-	                                <div class="details text-center">
-	                                    <h4 class="box-title">Malaysia</h4>
-	                                    <p class="offers-content">(15 deal offers)</p>
-	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
-	                                        <span class="five-stars" style="width: 80%;"></span>
-	                                    </div>
-	                                    <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
-	                                </div>
-	                            </li>
-	                            <li class="box">
-	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title=""><img src="http://placehold.it/270x160" alt="" width="270" height="160"></a>
-	                                </figure>
-	                                <div class="details text-center">
-	                                    <h4 class="box-title">Europe</h4>
-	                                    <p class="offers-content">(15 deal offers)</p>
-	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
-	                                        <span class="five-stars" style="width: 80%;"></span>
-	                                    </div>
-	                                    <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
-	                                </div>
-	                            </li>
-	                            <li class="box">
-	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title=""><img src="http://placehold.it/270x160" alt="" width="270" height="160"></a>
-	                                </figure>
-	                                <div class="details text-center">
-	                                    <h4 class="box-title">Greece</h4>
-	                                    <p class="offers-content">(15 deal offers)</p>
-	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
-	                                        <span class="five-stars" style="width: 80%;"></span>
-	                                    </div>
-	                                    <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
-	                                </div>
-	                            </li>
+								@endforeach
 	                        </ul>
 	                    </div>
 

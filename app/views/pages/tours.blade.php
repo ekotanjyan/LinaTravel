@@ -11,8 +11,8 @@
 		                <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed pulvinar massa idend porta nequetiam</p>
 		            </div>
 		            <div class="tour-packages row add-clearfix image-box">
-		            @foreach($tours as $value)
-		                <div class="col-sm-6 col-md-4">
+		            @foreach($mostpopulartours as $value)
+		                <div class="col-sm-6 col-md-4" style="width: 270;height: 192;">
 		                    <article class="box animated fadeInLeft" data-animation-type="fadeInLeft" style="animation-duration: 1s; visibility: visible;">
 		                        <figure>
 		                            <a href="http://www.soaptheme.net/html/travelo/tour-index.html#"><img src="{{URL::to($value->imgurl)}}"></a>
@@ -25,15 +25,15 @@
 		                </div>
 		            @endforeach
 		            </div>
-		            {{ Form::open(array('url' => 'tours_upload','files' => true)) }}
-		            {{ Form::label('NAME')}}
-		            {{ Form::text('name')}}
-		            {{ Form::label('PRICE')}}
-		            {{ Form::text('price')}}
-		            {{ Form::label('IMAGE')}}
-		            {{ Form::file('file')}}
-		            {{ Form::submit('Upload') }}
-		            {{ Form::close() }}
+		            {{--{{ Form::open(array('url' => 'tours_upload','files' => true)) }}--}}
+		            {{--{{ Form::label('NAME')}}--}}
+		            {{--{{ Form::text('name')}}--}}
+		            {{--{{ Form::label('PRICE')}}--}}
+		            {{--{{ Form::text('price')}}--}}
+		            {{--{{ Form::label('IMAGE')}}--}}
+		            {{--{{ Form::file('file')}}--}}
+		            {{--{{ Form::submit('Upload') }}--}}
+		            {{--{{ Form::close() }}--}}
 		        </div>
 		    </div>
 		    <div class="section">
@@ -42,61 +42,19 @@
 		            <div class="tour-guide image-carousel style2 flexslider animated" data-animation="slide" data-item-width="270" data-item-margin="30" data-animation-type="fadeInUp">
 		                
 		            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides image-box" style="width: 1000%; transition-duration: 0s; transform: translate3d(-300px, 0px, 0px);">
+							@foreach($didyouknow as $value)
 		                    <li style="width: 270px; float: left; display: block;">
 		                        <article class="box">
 		                            <figure>
-		                                <img src="{{URL::asset('asset/images/tours/1(1).jpg')}}" alt="" draggable="false">
+										{{ HTML::image($value->imgurl)}}
 		                            </figure>
 		                            <div class="details">
-		                                <h4>Baggage Information</h4>
-		                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
+		                                <h4>{{$value->name}}</h4>
+		                                <p>{{$value->description}}</p>
 		                            </div>
 		                        </article>
 		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <img src="{{URL::asset('asset/images/tours/2(1).jpg')}}" alt="" draggable="false">
-		                            </figure>
-		                            <div class="details">
-		                                <h4>Airport Check-in</h4>
-		                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <img src="{{URL::asset('asset/images/tours/3(1).jpg')}}" alt="" draggable="false">
-		                            </figure>
-		                            <div class="details">
-		                                <h4>Traveling with Kids</h4>
-		                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <img src="{{URL::asset('asset/images/tours/4(1).jpg')}}" alt="" draggable="false">
-		                            </figure>
-		                            <div class="details">
-		                                <h4>Special Assistance</h4>
-		                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-		                            </div>
-		                        </article>
-		                    </li>
-		                    <li style="width: 270px; float: left; display: block;">
-		                        <article class="box">
-		                            <figure>
-		                                <img src="{{URL::asset('asset/images/tours/1(1).jpg')}}" alt="" draggable="false">
-		                            </figure>
-		                            <div class="details">
-		                                <h4>Baggage Information</h4>
-		                                <p>Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-		                            </div>
-		                        </article>
-		                    </li>
+								@endforeach
 		                </ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="http://www.soaptheme.net/html/travelo/tour-index.html#">Previous</a></li><li><a class="flex-next" href="http://www.soaptheme.net/html/travelo/tour-index.html#">Next</a></li></ul></div>
 		        </div>
 		    </div>
@@ -211,12 +169,12 @@
 		            <div class="image-carousel style2 flexslider" data-animation="slide" data-item-width="270" data-item-margin="30">
 		                
 		            <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides tour-locations" style="width: 1000%; transition-duration: 0s; transform: translate3d(-300px, 0px, 0px);">
-							@foreach($last as $value)
+							@foreach($lastminutepackages as $value)
 		                    <li style="width: 270px; float: left; display: block;">
 		                        <article class="box">
 		                            <figure>
 		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
-		                                    <img src="{{URL::asset('asset/images/tours/1(2).jpg')}}" alt="" draggable="false">
+											{{ HTML::image($value->imgurl)}}
 		                                </a>
 		                            </figure>
 		                            <div class="details">

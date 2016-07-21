@@ -14,7 +14,7 @@
 	                        <div class="col-sms-6 col-sm-6 col-md-3">
 	                            <article class="box">
 	                                <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
-	                                    <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,$value->place) }}</a>
+	                                    <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,$value->place ,['style'=>'width: 270;height: 192;']) }}</a>
 	                                </figure>
 	                                <div class="details">
 	                                    <span class="price"><small>FROM</small>{{$value->price}}</span>
@@ -39,7 +39,7 @@
 	                                <article class="box">
 	                                    <figure>
 	                                        <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1">
-	                                            <img src="http://placehold.it/170x170" alt="" /></a>
+												{{ HTML::image($value->imgurl) }}</a>
 	                                    </figure>
 	                                    <div class="details">
 	                                        <h4 class="box-title">{{$value->place}}<small>{{$value->size}}</small></h4>
@@ -63,54 +63,22 @@
 	                    <p class="col-xs-9 center-block no-float text-center">Mauris ullamcorper nibh quis leo ultrices in hendrerit velit tristiqueut augue in nulla lacinia bibendum liberoras rutrum ac purus ut tristique.
 	Nullam placerat lacinia dolor quis pretium. Phasellus vitae lacinia quam, at pellentesque lorem. Sed euismod turpis quis mattis fringilla.</p>
 	                    <div class="row image-box style2">
+							@foreach($didyouknow as $value)
 	                        <div class="col-md-6">
 	                            <article class="box">
 	                                <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1">
-	                                    <a href="#" title=""><img src="http://placehold.it/270x192" alt="" width="270" height="192" /></a>
+	                                    <a href="#" title="">{{ HTML::image($value->imgurl)}}</a>
 	                                </figure>
 	                                <div class="details">
-	                                    <h4>Hire Cars</h4>
-	                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
+	                                    <h4>{{$value->name}}</h4>
+	                                    <p>{{$value->description}}</p>
 	                                    <a href="#" title="" class="button">SEE ALL</a>
 	                                </div>
 	                            </article>
 	                        </div>
-	                        <div class="col-md-6">
-	                            <article class="box">
-	                                <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1" data-animation-delay="0.4">
-	                                    <a href="#" title=""><img src="http://placehold.it/270x192" alt="" width="270" height="192" /></a>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4>Cruise Deals</h4>
-	                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-	                                    <a href="#" title="" class="button">SEE ALL</a>
-	                                </div>
-	                            </article>
-	                        </div>
-	                        <div class="col-md-6">
-	                            <article class="box">
-	                                <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1">
-	                                    <a href="#" title=""><img src="http://placehold.it/270x192" alt="" width="270" height="192" /></a>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4>Things To Do</h4>
-	                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-	                                    <a href="#" title="" class="button">SEE ALL</a>
-	                                </div>
-	                            </article>
-	                        </div>
-	                        <div class="col-md-6">
-	                            <article class="box">
-	                                <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1" data-animation-delay="0.4">
-	                                    <a href="#" title=""><img src="http://placehold.it/270x192" alt="" width="270" height="192" /></a>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4>Fly in Comfort</h4>
-	                                    <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-	                                    <a href="#" title="" class="button">SEE ALL</a>
-	                                </div>
-	                            </article>
-	                        </div>
+
+
+							@endforeach
 	                    </div>
 	                </div>
 	            </div>
@@ -118,62 +86,22 @@
 	            <div class="features section global-map-area parallax" data-stellar-background-ratio="0.5">
 	                <div class="container">
 	                    <div class="row image-box style7">
+							@foreach($features as $value)
 	                        <div class="col-sms-6 col-sm-6 col-md-3">
 	                            <article class="box">
 	                                <figure class="middle-block">
-	                                    <img src="http://placehold.it/300x120" alt="" class="middle-item" />
+										{{ HTML::image($value->imgurl)}}
 	                                    <span class="opacity-wrapper"></span>
 	                                </figure>
 	                                <div class="details">
-	                                    <h4><a href="#">Best Price Guarantee</a></h4>
+	                                    <h4><a href="#">{{$value->name}}</a></h4>
 	                                    <p>
-	                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
+	                                        {{$value->description}}
 	                                    </p>
 	                                </div>
 	                            </article>
 	                        </div>
-	                        <div class="col-sms-6 col-sm-6 col-md-3">
-	                             <article class="box">
-	                                <figure class="middle-block">
-	                                    <img src="http://placehold.it/300x120" alt="" class="middle-item" />
-	                                    <span class="opacity-wrapper"></span>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4><a href="#">Travel Insurance</a></h4>
-	                                    <p>
-	                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-	                                    </p>
-	                                </div>
-	                            </article>
-	                        </div>
-	                        <div class="col-sms-6 col-sm-6 col-md-3">
-	                             <article class="box">
-	                                <figure class="middle-block">
-	                                    <img src="http://placehold.it/300x120" alt="" class="middle-item" />
-	                                    <span class="opacity-wrapper"></span>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4><a href="#">Why Chose Us</a></h4>
-	                                    <p>
-	                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-	                                    </p>
-	                                </div>
-	                            </article>
-	                        </div>
-	                        <div class="col-sms-6 col-sm-6 col-md-3">
-	                             <article class="box">
-	                                <figure class="middle-block">
-	                                    <img src="http://placehold.it/300x120" alt="" class="middle-item" />
-	                                    <span class="opacity-wrapper"></span>
-	                                </figure>
-	                                <div class="details">
-	                                    <h4><a href="#">Need Help?</a></h4>
-	                                    <p>
-	                                        Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-	                                    </p>
-	                                </div>
-	                            </article>
-	                        </div>
+							@endforeach
 	                    </div>
 	                </div>
 	            </div>

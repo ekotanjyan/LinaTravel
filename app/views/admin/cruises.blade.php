@@ -1,10 +1,10 @@
-<?php $table="didyouknow";
-$cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
+<?php $table="cruises";
+$cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals'];?>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Destinations</h1>
+                <h1 class="page-header">Cruises</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -12,9 +12,9 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
         <div class="row">
             <div class="col-lg-12">
                 <div class="panel panel-default">
-                    {{--<div class="panel-heading">--}}
-                        {{--DataTables Advanced Tables--}}
-                    {{--</div>--}}
+                    <div class="panel-heading">
+                        DataTables Advanced Tables
+                    </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div class="dataTable_wrapper">
@@ -22,8 +22,7 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                                 <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Place</th>
-                                    <th>Price</th>
+                                    <th>Description</th>
                                     <th>Category</th>
                                     <th>Image</th>
                                     <th>Edit</th>
@@ -33,37 +32,35 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 
                                 <tr class="gradeA">
                                     <form action="admin/add" method="post" lpformnum="2" enctype="multipart/form-data">
-                                        <input type="hidden" class="form-control" name="table" id="table" value="Populardestinations">
-                                    <td><input type="text" class="form-control" name="name" id="name"></td>
-                                    <td><input type="text" class="form-control" name="place" id="place"></td>
-                                    <td><input type="text" class="form-control" name="price" id="price"></td>
+                                        <input type="hidden" class="form-control" name="table" id="table" value="{{$table}}">
+                                        <td>{{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}</td>
+                                        <td>{{Form::textarea('description', null,['id'=>'description','class'=>'form-control'])}}</td>
                                         <td>{{Form::select('category', $cat, 0)}}</td>
-                                    <td><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
-                                    <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
-                                  </form>
+                                        <td>{{Form::file('file',['id'=>'file','class'=>'form-control','accept'=>'image/jpeg'])}}</td>
+                                        <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
+                                    </form>
                                 </tr>
                                 @foreach($data as $value)
-                                <tr class="gradeA">
-                                    <td>{{$value->name}}</td>
-                                    <td>{{$value->place}}</td>
-                                    <td>{{$value->price}}</td>
-                                    <td>{{$cat[$value->category]}}</td>
-                                    <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="Populardestinations" data-toggle="modal" data-target="#myModal">Edit</button>
-                                        <form action="admin/delete" method="post">
-                                            <input type="hidden" name="id" value="{{$value->id}}">
-                                            <input type="hidden" name="table" value="Populardestinations">
-                                            <button type="submit" class="btn btn-danger btn-lg" data-table="Populardestinations">Delete</button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                    <tr class="gradeA">
+                                        <td>{{$value->name}}</td>
+                                        <td>{{$value->description}}</td>
+                                        <td>{{$cat[$value->category]}}</td>
+                                        <td>{{ HTML::image($value->imgurl,$value->name) }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="{{$table}}" data-toggle="modal" data-target="#myModal">Edit</button>
+                                            <form action="admin/delete" method="post">
+                                                <input type="hidden" name="id" value="{{$value->id}}">
+                                                <input type="hidden" name="table" value="{{$table}}">
+                                                <button type="submit" class="btn btn-danger btn-lg" data-table="{{$table}}">Delete</button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <!-- /.table-responsive -->
-                                   </div>
+                    </div>
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
@@ -81,18 +78,14 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 
                     {{ Form::open(array('url' => 'admin/update','method'=>'post','enctype'=>'multipart/form-data')) }}
                     {{Form::hidden('id', null,['id'=>'id','class'=>'form-control'])}}
-                    {{Form::hidden('table', 'Populardestinations',['class'=>'form-control'])}}
+                    {{Form::hidden('table', "$table",['class'=>'form-control'])}}
                     <div class="form-group">
                         {{Form::Label('name', 'Name:',['class'=>'form-control-label'])}}
                         {{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}
                     </div>
                     <div class="form-group">
-                        {{Form::Label('place', 'Place:',['class'=>'form-control-label'])}}
-                        {{Form::text('place', null,['id'=>'place','class'=>'form-control'])}}
-                    </div>
-                    <div class="form-group">
-                        {{Form::Label('price', 'Price:',['class'=>'form-control-label'])}}
-                        {{Form::text('price', null,['id'=>'price','class'=>'form-control'])}}
+                        {{Form::Label('description', 'Description:',['class'=>'form-control-label'])}}
+                        {{Form::textarea('description', null,['id'=>'description','class'=>'form-control'])}}
                     </div>
                     <div class="form-group">
                         {{Form::Label('category', 'Category:',['class'=>'form-control-label'])}}
@@ -132,8 +125,8 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
                         a.find('#name').val(msg.name);
-                        a.find('#place').val(msg.place);
-                        a.find('#price').val(msg.price);
+                        a.find('#description').val(msg.description);
+                        a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
 
