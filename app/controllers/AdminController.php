@@ -10,7 +10,7 @@ class AdminController extends BaseController
 {
     public function index()
     {
-        $arr = ['Mostpopulartours','Partners','didyouknow','cruises','about','Populardestinations'];
+        $arr = ['Mostpopulartours','Partners','didyouknow','cruises','about','slider','Populardestinations'];
         switch (Input::get('r')){
             case 'tours':
                 $table = $arr[0];
@@ -27,8 +27,11 @@ class AdminController extends BaseController
             case "about":
                 $table = $arr[4];
                 break;
-            default:
+            case "slider":
                 $table = $arr[5];
+                break;
+            default:
+                $table = $arr[6];
 
         }
 //            if(Input::has('s'))
@@ -53,7 +56,7 @@ class AdminController extends BaseController
         $ob = new $table;
         $size = self::Size($table,Input::get('category'));
 
-        if (Input::file('file'))
+        if (Input::hasFile('file'))
             $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
         else
             $imgurl = "/content/270.png";
@@ -97,13 +100,14 @@ class AdminController extends BaseController
         else
             $imgurl = "/content/270.png";
         $size = self::Size($table,Input::get('category'));
-            if (Input::file('file'))
+            if (Input::hasFile('file'))
                 $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
 
             $ob = $table::find(Input::get('id'));
             foreach (Input::get() as $key=>$value)
                 if($key!='table' && $key!='_token' && $key!='id' && !empty($key))
                 $ob->$key = $value;
+        if(Input::get('table')!='slider')
             $ob->imgurl = $imgurl;
             $ob->save();
 
@@ -118,10 +122,11 @@ class AdminController extends BaseController
         $new_sizes = self::ProportionalResize($width, $height, $newwidth, $newheight);
         $newwidth = $new_sizes[0];
         $newheight = $new_sizes[1];
-        $thumb = imagecreatetruecolor($newwidth, $newheight);
         $source = imagecreatefromjpeg($img);
+        $thumb = imagecreatetruecolor($newwidth, $newheight);
         imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-        imagejpeg($thumb, "../public/content/" . $name . ".jpg");
+//        imagejpeg($thumb, base_path()."/public/content/ . $name . ".jpg");
+        imagejpeg($source, base_path()."/public/content/" . $name . ".jpg");
         return "/content/" . $name . ".jpg";
     }
 

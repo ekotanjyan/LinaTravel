@@ -13,6 +13,8 @@
     @include('admin.cruises')
 @elseif(Input::get('r')=='about')
     @include('admin.about')
+@elseif(Input::get('r')=='slider')
+    @include('admin.slider')
 @else
     @include('admin.ap')
 @endif

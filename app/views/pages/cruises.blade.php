@@ -11,29 +11,30 @@
 									<div class="col-sm-6 col-md-3">
 										<article class="box">
 											<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-												<a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="{{URL::to($value->imgurl)}}"></a>
+												<a href="info/cruises/{{$value->id}}" style="height: 270px;" class="hover-effect popup-gallery"><img src="{{URL::to($value->imgurl)}}"></a>
 											</figure>
 											<div class="details">
 												<span class="price"><small>from</small>{{$value->price}}</span>
-												<h4 class="box-title">{{$value->name}}<small>4 nights</small></h4>
-												<div class="feedback">
-													<div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>
-													<span class="review">27 reviews</span>
-												</div>
+												<h4 class="box-title">{{$value->name}}<small>{{$value->days}} nights</small></h4>
+												{{--<div class="feedback">--}}
+													{{--<div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>--}}
+													{{--<span class="review">27 reviews</span>--}}
+												{{--</div>--}}
 												<div class="row time">
 													<div class="date col-xs-6">
 														<i class="soap-icon-clock yellow-color"></i>
 														<div>
-															<span class="skin-color">Date</span><br />Jan 26, 2014
+															<span class="skin-color">Date</span><br />{{date("d M Y",strtotime($value->start_date))}}
+															{{--{{date("d M Y",strtotime($value->start_date. " + $value->days days"))}}--}}
 														</div>
 													</div>
-													<div class="departure col-xs-6">
-														<i class="soap-icon-departure yellow-color"></i>
-														<div>
-															<span class="skin-color">Departure</span><br />{{$value->place}}
-														</div>
-													</div>
-												</div>
+													{{--<div class="departure col-xs-6">--}}
+														{{--<i class="soap-icon-departure yellow-color"></i>--}}
+														{{--<div>--}}
+															{{--<span class="skin-color">Departure</span><br />{{$value->place}}--}}
+														{{--</div>--}}
+													{{--</div>--}}
+												{{--</div>--}}
 												<p class="description fourty-space">Save up to <span class="skin-color">20%</span> in grand suite</p>
 												<div class="action">
 													<a class="button btn-small full-width" href="cruise-detailed.html">SELECT NOW</a>
@@ -88,15 +89,15 @@
 	                        </div>
 	                        <div class="col-md-6">
 	                            <h2>Top Cruise Line Deals</h2>
-	                            <div class="travelo-box cruise-line-deals image-box style1">
+	                            <div class="travelo-box image-box style1">
 	                                <div class="overflow-hidden">
 	                                    <div class="row">
 											@foreach($topcruiselinedeals as $value)
-	                                        <div class="col-sms-6 col-sm-6">
+	                                        <div class="col-xs-4">
 	                                            <div class="box">
-	                                                <figure class="animated" data-animation-type="fadeIn" data-animation-delay="0">
-	                                                    <span class="image-wrapper">{{ HTML::image($value->imgurl) }}</span>
-	                                                </figure>
+													<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+														<a href="info/cruises/{{$value->id}}" style="height: 189px;" class="hover-effect yellow popup-gallery"><img style="width: auto;height: 100%;" src="{{URL::to($value->imgurl)}}"></a>
+													</figure>
 	                                                <div class="details">
 	                                                    <span class="price"><small>3 nights</small>$169</span>
 	                                                    <h5 class="box-title"><a href="#">{{$value->name}}</a><small>Up to $400 OFF!</small></h5>
@@ -115,7 +116,7 @@
 								@foreach($hotcruisesdeals as $value)
 	                            <li class="box">
 	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="ajax/cruise-slideshow-popup.html" title="">{{ HTML::image($value->imgurl) }}</a>
+	                                    <a class="hover-effect popup-gallery" href="info/cruises/{{$value->id}}" title="">{{ HTML::image($value->imgurl) }}</a>
 	                                </figure>
 	                                <div class="details text-center">
 	                                    <h4 class="box-title">{{$value->name}}</h4>

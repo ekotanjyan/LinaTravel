@@ -68,6 +68,8 @@
                     <a href="admin?r=cruises"><i class="fa fa-dashboard fa-fw"></i>Cruises</a>
                 </li><li>
                     <a href="admin?r=about"><i class="fa fa-dashboard fa-fw"></i>About</a>
+                </li><li>
+                    <a href="admin?r=slider"><i class="fa fa-dashboard fa-fw"></i>Slider Info</a>
                 </li>
             </ul>
         </div>

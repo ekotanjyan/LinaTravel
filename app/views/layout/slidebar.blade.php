@@ -1,3 +1,5 @@
+<?php $slider = slider::orderBy('id', 'ASC')->get(); ?>
+
 <div id="slideshow">
     <div class="fullwidthbanner-container">
         <div class="revolution-slider" style="height: 0; overflow: hidden;">
@@ -5,7 +7,7 @@
                 <!-- Slide1 -->
                 <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" class="" style="width: 100%; height: 100%; overflow: hidden; z-index: 18; visibility: hidden; opacity: 0;">
                     <!-- MAIN IMAGE -->
-                    <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined"><div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="asset/images/slider/slider1/bg.jpg" data-src="asset/images/slider/slider1/bg.jpg" style="width: 100%; height: 100%; opacity: 0; visibility: hidden; background-image: url(asset/images/slider/slider2/bg.jpg); background-color: rgba(0, 0, 0, 0); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div></div>
+                    <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined"><div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="asset/images/slider/slider1/bg.jpg" data-src="asset/images/slider/slider1/bg.jpg" style="width: 100%; height: 100%; opacity: 0; visibility: hidden; background-image: url(http://www.soaptheme.net/html/travelo/images/sliders/revolution_slider/slider1/slide1/bg.jpg); background-color: rgba(0, 0, 0, 0); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div></div>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -88,7 +90,7 @@
 
                     <!-- LAYER NR. 5 -->
                     <div class="tp-caption large_bold_white_med_2 lfb str tp-resizeme start" data-x="25" data-y="181" data-speed="1500" data-start="1700" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 6; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px; left: 112.5px; top: 181px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 50, 0, 0, 1);">
-                        <p class="caption-big-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">Let’s <strong style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;"><i style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">Discover</i></strong> the world together!</p>
+                        <p class="caption-big-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">{{$slider[0]['name']}}</p>
                     </div>
 
                     <!-- LAYER NR. 6 -->
@@ -109,22 +111,22 @@
 
                     <!-- LAYER NR. 10 -->
                     <div class="tp-caption large_bold_white_med lft str tp-resizeme start" data-x="72" data-y="230" data-speed="1500" data-start="3200" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 11; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 159.5px; top: 230px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 50, 0, 0, 1);">
-                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Over<strong style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 20px;"> 500 </strong>Airlines</span>
+                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[0]['text1']}}</span>
                     </div>
 
                     <!-- LAYER NR. 11 -->
                     <div class="tp-caption large_bold_white_med lft stl tp-resizeme start" data-x="73" data-y="274" data-speed="1500" data-start="3500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 12; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 160.5px; top: 274px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, -50, 0, 0, 1);">
-                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">More than <strong style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 20px;">13,000</strong> Places</span>
+                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[0]['text2']}}</span>
                     </div>
 
                     <!-- LAYER NR. 12 -->
                     <div class="tp-caption large_bold_white_med lft stt tp-resizeme start" data-x="73" data-y="318" data-speed="1500" data-start="3800" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 13; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 160.5px; top: 318px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, 0, -50, 0, 1);">
-                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Best Price Guarantee</span>
+                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[0]['text3']}}</span>
                     </div>
 
                     <!-- LAYER NR. 13 -->
                     <div class="tp-caption large_bold_white_med lft stl tp-resizeme start" data-x="75" data-y="357" data-speed="1500" data-start="4100" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 14; transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 162.5px; top: 357px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.0025, -50, 0, 0, 1);">
-                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Customer Care</span>
+                        <span class="caption-medium-title" style="transition: all 0s ease 0s; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[0]['text4']}}</span>
                     </div>
 
                     <!-- LAYER NR. 14 -->
@@ -136,7 +138,7 @@
                 <!-- Slide3 -->
                 <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500" class="" style="width: 100%; height: 100%; overflow: hidden; visibility: hidden; opacity: 0; z-index: 20;">
                     <!-- MAIN IMAGE -->
-                    <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined"><div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{URL::to('asset/images/slider/slider2/bg.jpg')}}" data-src="{{URL::to('asset/images/slider/slider2/bg.jpg')}}" style="width: 100%; height: 100%; opacity: 0; visibility: inherit; background-image: url('asset/images/slider/slider2/bg.jpg'); background-color: rgba(0, 0, 0, 0); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div><div class="slot" style="position:absolute;top:0px;left:0px;overflow:hidden;width:1345.6px;height:646px"><div class="slotslide" style="position: absolute; top: -646px; left: 0px; width: 1345.6px; height: 646px; overflow: hidden; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="background-color:rgba(0, 0, 0, 0);position:absolute;top:0px;left:0px;width:1345px;height:646px;background-image:url(asset/images/slider/slider2/bg.jpg);background-repeat:no-repeat;background-size:cover;background-position:center center;"></div></div></div></div>
+                    <div class="slotholder" style="width:100%;height:100%;" data-duration="undefined" data-zoomstart="undefined" data-zoomend="undefined" data-rotationstart="undefined" data-rotationend="undefined" data-ease="undefined" data-bgpositionend="undefined" data-bgposition="undefined" data-kenburns="undefined" data-easeme="undefined" data-bgfit="undefined" data-bgfitend="undefined" data-owidth="undefined" data-oheight="undefined"><div class="tp-bgimg defaultimg" data-lazyload="undefined" data-bgfit="cover" data-bgposition="center center" data-bgrepeat="no-repeat" data-lazydone="undefined" src="{{URL::to('asset/images/slider/bg.jpg')}}" data-src="{{URL::to('asset/images/sliderbg.jpg')}}" style="width: 100%; height: 100%; opacity: 0; visibility: inherit; background-image: url('asset/images/slider/bg.jpg'); background-color: rgba(0, 0, 0, 0); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div><div class="slot" style="position:absolute;top:0px;left:0px;overflow:hidden;width:1345.6px;height:646px"><div class="slotslide" style="position: absolute; top: -646px; left: 0px; width: 1345.6px; height: 646px; overflow: hidden; opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);"><div style="background-color:rgba(0, 0, 0, 0);position:absolute;top:0px;left:0px;width:1345px;height:646px;background-image:url(asset/images/slider/bg.jpg}});background-repeat:no-repeat;background-size:cover;background-position:center center;"></div></div></div></div>
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 1 -->
@@ -211,7 +213,7 @@
 
                     <!-- LAYER NR. 15 -->
                     <div class="tp-caption lfr stl tp-resizeme start" data-x="25" data-y="181" data-speed="1500" data-start="4000" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 17; transition: none; min-height: 0px; min-width: 0px; line-height: 18px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 12px; left: 112.5px; top: 181px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 1360, 0, 0, 1);">
-                        <p class="caption-big-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">Let’s <strong style="transition: none; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;"><i style="transition: none; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">Discover</i></strong> the world together!</p>
+                        <p class="caption-big-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 35px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 30px;">{{$slider[1]['name']}}</p>
                     </div>
 
                     <!-- LAYER NR. 16 -->
@@ -220,7 +222,7 @@
 
                     <!-- LAYER NR. 17 -->
                     <div class="tp-caption large_bold_white_med sfb stb tp-resizeme start" data-x="72" data-y="230" data-speed="1500" data-start="4400" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 19; transition: none; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 159.5px; top: 230px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, 50, 0, 1);">
-                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Over<strong style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 20px;"> 500 </strong>Airlines</span>
+                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[1]['text1']}}</span>
                     </div>
 
                     <!-- LAYER NR. 18 -->
@@ -229,7 +231,7 @@
 
                     <!-- LAYER NR. 19 -->
                     <div class="tp-caption large_bold_white_med lft stl tp-resizeme start" data-x="73" data-y="274" data-speed="1500" data-start="4700" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 21; transition: none; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 160.5px; top: 274px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, -56, 0, 1);">
-                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">More than <strong style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 20px;">13,000</strong> Places</span>
+                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[1]['text2']}}</span>
                     </div>
 
                     <!-- LAYER NR. 20 -->
@@ -238,7 +240,7 @@
 
                     <!-- LAYER NR. 21 -->
                     <div class="tp-caption large_bold_white_med lft stt tp-resizeme start" data-x="73" data-y="318" data-speed="1500" data-start="5100" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 23; transition: none; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 160.5px; top: 318px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, -54, 0, 1);">
-                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Best Price Guarantee</span>
+                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[1]['text3']}}</span>
                     </div>
 
                     <!-- LAYER NR. 22 -->
@@ -247,7 +249,7 @@
 
                     <!-- LAYER NR. 23 -->
                     <div class="tp-caption large_bold_white_med lft stl tp-resizeme start" data-x="75" data-y="357" data-speed="1500" data-start="5500" data-easing="Power3.easeInOut" data-splitin="none" data-splitout="none" data-elementdelay="0.1" data-endelementdelay="0.1" data-endspeed="300" style="z-index: 25; transition: none; min-height: 0px; min-width: 0px; line-height: 28px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px; left: 162.5px; top: 357px; visibility: visible; opacity: 0; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.00166, 0, -54, 0, 1);">
-                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">Customer Care</span>
+                        <span class="caption-medium-title" style="transition: none; min-height: 0px; min-width: 0px; line-height: 29px; border-width: 0px; margin: 0px; padding: 0px; letter-spacing: 0px; font-size: 25px;">{{$slider[1]['text4']}}</span>
                     </div>
 
                     <!-- LAYER NR. 24 -->

@@ -99,12 +99,9 @@ Ligula vehicula enenatis semper, magna lorem aliquet lacusin ante dapibus dictum
                                         <h4 class="box-title"><a href="#">{{$value->name}}</a></h4>
                                         <p class="description">{{$value->description}}</p>
                                         <ul class="social-icons clearfix">
-                                            <li class="twitter"><a title="twitter" href="#" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
-                                            <li class="googleplus"><a title="googleplus" href="#" data-toggle="tooltip"><i class="soap-icon-googleplus"></i></a></li>
-                                            <li class="facebook"><a title="facebook" href="#" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
-                                            <li class="linkedin"><a title="linkedin" href="#" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
-                                            <li class="vimeo"><a title="vimeo" href="#" data-toggle="tooltip"><i class="soap-icon-vimeo"></i></a></li>
-                                            <li class="flickr"><a title="flickr" href="#" data-toggle="tooltip"><i class="soap-icon-flickr"></i></a></li>
+                                            <li class="twitter"><a title="twitter" target="_blank" href="{{URL::asset($value->twitter)}}" data-toggle="tooltip"><i class="soap-icon-twitter"></i></a></li>
+                                            <li class="facebook"><a title="facebook" target="_blank" href="{{URL::asset($value->facebook)}}" data-toggle="tooltip"><i class="soap-icon-facebook"></i></a></li>
+                                            <li class="linkedin"><a title="linkedin" target="_blank" href="{{URL::asset($value->linkedin)}}" data-toggle="tooltip"><i class="soap-icon-linkedin"></i></a></li>
                                         </ul>
                                     </div>
                                 </article>

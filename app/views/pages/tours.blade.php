@@ -12,17 +12,17 @@
 		            </div>
 		            <div class="tour-packages row add-clearfix image-box">
 		            @foreach($mostpopulartours as $value)
-		                <div class="col-sm-6 col-md-4" style="width: 270;height: 192;">
-		                    <article class="box animated fadeInLeft" data-animation-type="fadeInLeft" style="animation-duration: 1s; visibility: visible;">
-		                        <figure>
-		                            <a href="http://www.soaptheme.net/html/travelo/tour-index.html#"><img src="{{URL::to($value->imgurl)}}"></a>
-		                            <figcaption>
-		                                <span class="price">{{$value->price}}</span>
-		                                <h2 class="caption-title">{{$value->name}}</h2>
-		                            </figcaption>
-		                        </figure>
-		                    </article>
-		                </div>
+							<div class="col-sms-6 col-sm-6 col-md-3">
+								<article class="box">
+									<figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
+										<a href="info/mostpopulartours/{{$value->id}}" style=" height: 270; " title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,null,['width'=>'270','height'=>'160']) }}</a>
+									</figure>
+									<div class="details">
+										<span class="price"><small>FROM</small>{{$value->price}}</span>
+										<h4 class="box-title"><a href="hotel-detailed.html">{{$value->name}}</a></h4>
+									</div>
+								</article>
+							</div>
 		            @endforeach
 		            </div>
 		            {{--{{ Form::open(array('url' => 'tours_upload','files' => true)) }}--}}
@@ -172,8 +172,8 @@
 							@foreach($lastminutepackages as $value)
 		                    <li style="width: 270px; float: left; display: block;">
 		                        <article class="box">
-		                            <figure>
-		                                <a href="http://www.soaptheme.net/html/travelo/tour-index.html#" class="hover-effect">
+		                            <figure >
+		                                <a style="height: 270px;" href="info/mostpopulartours/{{$value->id}}" class="hover-effect popup-gallery">
 											{{ HTML::image($value->imgurl)}}
 		                                </a>
 		                            </figure>

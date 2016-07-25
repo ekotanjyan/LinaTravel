@@ -1,4 +1,4 @@
-<?php $table="didyouknow";
+<?php $table="Populardestinations";
 $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 <div id="wrapper">
     <div id="page-wrapper">
@@ -33,12 +33,12 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 
                                 <tr class="gradeA">
                                     <form action="admin/add" method="post" lpformnum="2" enctype="multipart/form-data">
-                                        <input type="hidden" class="form-control" name="table" id="table" value="Populardestinations">
+                                        <input type="hidden" class="form-control" name="table" id="table" value="{{$table}}">
                                     <td><input type="text" class="form-control" name="name" id="name"></td>
                                     <td><input type="text" class="form-control" name="place" id="place"></td>
                                     <td><input type="text" class="form-control" name="price" id="price"></td>
                                         <td>{{Form::select('category', $cat, 0)}}</td>
-                                    <td><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
+                                    <td><label for="file">Max Size 2MB</label><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
                                     <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
                                   </form>
                                 </tr>
@@ -50,11 +50,11 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                                     <td>{{$cat[$value->category]}}</td>
                                     <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="Populardestinations" data-toggle="modal" data-target="#myModal">Edit</button>
+                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="{{$table}}" data-toggle="modal" data-target="#myModal">Edit</button>
                                         <form action="admin/delete" method="post">
                                             <input type="hidden" name="id" value="{{$value->id}}">
-                                            <input type="hidden" name="table" value="Populardestinations">
-                                            <button type="submit" class="btn btn-danger btn-lg" data-table="Populardestinations">Delete</button>
+                                            <input type="hidden" name="table" value="{{$table}}">
+                                            <button type="submit" class="btn btn-danger btn-lg" data-table="{{$table}}">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -81,7 +81,7 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 
                     {{ Form::open(array('url' => 'admin/update','method'=>'post','enctype'=>'multipart/form-data')) }}
                     {{Form::hidden('id', null,['id'=>'id','class'=>'form-control'])}}
-                    {{Form::hidden('table', 'Populardestinations',['class'=>'form-control'])}}
+                    {{Form::hidden('table', $table,['class'=>'form-control'])}}
                     <div class="form-group">
                         {{Form::Label('name', 'Name:',['class'=>'form-control-label'])}}
                         {{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}

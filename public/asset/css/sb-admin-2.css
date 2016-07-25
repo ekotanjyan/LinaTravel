@@ -374,3 +374,20 @@ table.dataTable thead .sorting:after {
 .login-button{
     margin-top: 5px;
 }
+
+.gradeA img {
+    width: 200px;
+    height: auto;
+}
+
+.gradeA input {
+    width: 100px !important;
+}.gradeA select {
+    width: 100px !important;
+}.gradeA textarea {
+      width: 200px !important;
+      height: 100px !important;
+}
+.gradeA [type=file] {
+    width: 145px !important;
+}

@@ -19,6 +19,9 @@ class About extends Migration {
 			$table->text('description');
 			$table->string('imgurl', 255);
 			$table->integer('category');
+			$table->string('facebook', 255);
+			$table->string('twitter', 255);
+			$table->string('linkedin', 255);
 			$table->timestamps();
 		});
 	}

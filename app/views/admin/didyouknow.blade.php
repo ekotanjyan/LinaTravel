@@ -36,7 +36,7 @@
                                     <td>{{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}</td>
                                     <td>{{Form::textarea('description', null,['id'=>'description','class'=>'form-control'])}}</td>
                                     <td>{{Form::select('category', $cat, 0)}}</td>
-                                    <td>{{Form::file('file',['id'=>'file','class'=>'form-control','accept'=>'image/jpeg'])}}</td>
+                                    <td><label for="file">Max Size 2MB</label>{{Form::file('file',['id'=>'file','class'=>'form-control','accept'=>'image/jpeg'])}}</td>
                                     <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
                                   </form>
                                 </tr>

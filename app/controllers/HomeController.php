@@ -24,7 +24,7 @@ class HomeController extends BaseController {
 		$data['honeymoon'] = Populardestinations::where('category',1)->orderBy('updated_at', 'desc')->get();
 		$data['didyouknow'] = didyouknow::where('category',0)->orderBy('updated_at', 'desc')->get();
 		$data['features'] = didyouknow::where('category',1)->orderBy('updated_at', 'desc')->get();
-       	return View::make('pages.home',$data);
+		return View::make('pages.home',$data);
 	}
 	public function lang($lang='en')
 	{
@@ -90,6 +90,11 @@ class HomeController extends BaseController {
 		$data['travelodedicatedteam'] = about::where('category',1)->orderBy('updated_at', 'desc')->get();
 		$data['checkourinvestorsrelations'] = about::where('category',2)->orderBy('updated_at', 'desc')->get();
 		return View::make('pages.aboutus',$data);
+	}
+	public function info($table,$id)
+	{
+		$data['value'] = $table::where('id',$id)->first();
+		return View::make('pages.info',$data);
 	}
 	public function contactus()
 	{

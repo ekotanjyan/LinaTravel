@@ -1,5 +1,5 @@
 <header id="header" class="navbar-static-top">
-    <div class="topnav hidden-xs" style="display: none;">
+    <div class="topnav hidden-xs">
         <div class="container">
             <ul class="quick-menu pull-left">
                 <li><a href="#">My Account</a></li>
@@ -40,11 +40,11 @@
     
     <div class="main-header">   
         <div class="container">
-            <h3 class="navbar-brand" style="padding: 2px 0px !important; height: 59px !important;">
-                <a href="#" title="Lina Travel - home">
-                    <img src="{{URL::asset('asset/images/linatravel.png')}}" alt="LinaTravel HTML5 Template" style="height: 72px"/>
+            <h1 class="logo navbar-brand">
+                <a href="index.html" title="Travelo - home">
+                    <img src="{{URL::asset('asset/images/logo.png')}}" alt="Travelo HTML5 Template" />
                 </a>
-            </h3>
+            </h1>
 
             <nav id="main-menu" role="navigation">
                 <ul class="menu">

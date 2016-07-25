@@ -5426,6 +5426,7 @@ ul.check-circle li:before {
             animation: toBottomFromTop 0.3s forwards; }
 
 #header .logo a, #footer .logo a, .chaser .logo a {
+  background: url("../images/logo/skin8-logo.png") no-repeat 0 0;
   display: block; }
 #header .logo img, #footer .logo img, .chaser .logo img {
   filter: alpha(opacity=0);

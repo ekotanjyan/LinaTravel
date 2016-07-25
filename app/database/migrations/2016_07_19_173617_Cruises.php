@@ -16,9 +16,12 @@ class Cruises extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name', 255);
+			$table->unsignedInteger('price');
+			$table->date('start_date');
+			$table->unsignedInteger('days');
 			$table->text('description');
 			$table->string('imgurl', 255);
-			$table->integer('category');
+			$table->unsignedInteger('category');
 			$table->timestamps();
 		});
 	}

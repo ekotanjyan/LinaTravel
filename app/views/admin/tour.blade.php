@@ -36,7 +36,7 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                                         <td><input type="text" class="form-control" name="name" id="name"></td>
                                         <td><input type="text" class="form-control" name="price" id="price"></td>
                                         <td>{{Form::select('category', $cat, 0)}}</td>
-                                        <td><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
+                                        <td><label for="file">Max Size 2MB</label><input type="file" class="form-control"  name="file" id="file" accept="image/jpeg"></td>
                                         <td><input value="Add" type="submit" class="btn btn-success btn-lg"></td>
                                     </form>
                                 </tr>

@@ -13,6 +13,8 @@
 Route::get('/', 'HomeController@index');
 Route::get('lang/{lang?}', 'HomeController@lang');
 Route::get('home', 'HomeController@index');
+//Route::post('info', 'HomeController@info');
+Route::match(['get', 'post'], 'info/{table}/{id}', 'HomeController@info');
 Route::get('tours', 'HomeController@tours');
 Route::get('cruises', 'HomeController@cruises');
 Route::get('aboutus', 'HomeController@aboutus');

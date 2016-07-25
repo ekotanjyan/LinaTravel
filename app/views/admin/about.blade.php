@@ -91,6 +91,15 @@
                         {{Form::Label('category', 'Category:',['class'=>'form-control-label'])}}
                         {{Form::select('category', $cat, 0)}}
                     </div>
+                    <div class="form-group" style="display: none" id="social">
+                        {{Form::Label('facebook', 'Facebook:',['class'=>'form-control-label'])}}
+                        {{Form::text('facebook', null,['id'=>'facebook','class'=>'form-control'])}}
+                        {{Form::Label('twitter', 'Twitter:',['class'=>'form-control-label'])}}
+                        {{Form::text('twitter', null,['id'=>'twitter','class'=>'form-control'])}}
+                        {{Form::Label('linkedin', 'Linkedin:',['class'=>'form-control-label'])}}
+                        {{Form::text('linkedin', null,['id'=>'linkedin','class'=>'form-control'])}}
+
+                    </div>
                     <div class="form-group">
                         {{Form::Label('imgurl', 'Image:',['class'=>'form-control-label'])}}
                         {{Form::text('imgurl', null,['id'=>'imgurl','class'=>'form-control'])}}
@@ -123,13 +132,19 @@
             })
                     .done(function(msg) {
                         var a = $('#myModal');
+                        a.find('#social').hide();
                         a.find('#id').val(msg.id);
                         a.find('#name').val(msg.name);
                         a.find('#description').val(msg.description);
                         a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
+                        if(msg.category==1) {
+                            a.find('#facebook').val(msg.facebook);
+                            a.find('#twitter').val(msg.twitter);
+                            a.find('#linkedin').val(msg.linkedin);
+                            a.find('#social').show();
+                        }
                         console.log(msg);
-
                     })
                     .fail(function() {
                         console.log("error");
@@ -140,9 +155,12 @@
         });
         $("#popup").modal();
 
-        function Delete() {
-
-        }
+        $('#myModal').find("#category").change(function() {
+            if($( this ).val()==1)
+                $('#social').show();
+            else
+                $('#social').hide();
+        });
     });
 
 </script>

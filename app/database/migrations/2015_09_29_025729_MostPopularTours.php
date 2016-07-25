@@ -16,9 +16,10 @@ class MostPopularTours extends Migration {
         {
             $table->increments('id');
             $table->string('name', 255);
-            $table->string('price', 15);
+            $table->integer('price');
             $table->string('imgurl', 255);
 			$table->integer('category');
+			$table->text('description');
             $table->timestamps();
         });
 	}
