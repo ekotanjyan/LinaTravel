@@ -44,7 +44,7 @@ class AdminController extends BaseController
     public function info()
     {
         
-            $data = DB::table(strtolower(Input::get('table')))->where('id',Input::get('id'))->first();
+            $data = DB::table(Input::get('table'))->where('id',Input::get('id'))->first();
             return json_encode($data);
 
         
