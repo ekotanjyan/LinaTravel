@@ -117,7 +117,7 @@
         $('.gradeA button').click(function(){
             $.ajax({
                 url: 'admin/info',
-                type: 'POST',
+                type: 'GET',
                 dataType: 'json',
                 data: {id: $(this).data('id'),table:$(this).data('table')}
             })
