@@ -55,11 +55,16 @@ class AdminController extends BaseController
         $table = Input::get('table');
         $ob = new $table;
         $size = self::Size($table,Input::get('category'));
+		$imgurl = "/content/270.png";
 
-        if (Input::hasFile('file'))
-            $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
-        else
-            $imgurl = "/content/270.png";
+if (Input::File('file'))
+				if(Input::file('file')->isValid())
+				{
+                $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
+				}else{
+Session::flash('error', "Image Size is big");
+return Redirect::back();
+				}
         $ob->imgurl = $imgurl;
         foreach (Input::get() as $key=>$value)
             if($key!='table' && $key!='_token' && $key!='id' && !empty($key))
@@ -100,9 +105,14 @@ class AdminController extends BaseController
         else
             $imgurl = "/content/270.png";
         $size = self::Size($table,Input::get('category'));
-            if (Input::hasFile('file'))
+	if (Input::File('file'))
+				if(Input::file('file')->isValid())
+				{
                 $imgurl = self::UploadImage(Input::file('file'),$size[0], $size[1]);
-
+				}else{
+Session::flash('error', "Image Size is big");
+return Redirect::back();
+				}
             $ob = $table::find(Input::get('id'));
             foreach (Input::get() as $key=>$value)
                 if($key!='table' && $key!='_token' && $key!='id' && !empty($key))

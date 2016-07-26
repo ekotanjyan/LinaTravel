@@ -77,4 +77,8 @@
     </div>
     <!-- /.navbar-static-side -->
 </nav>
+@if (Session::has('error'))
+   <div style="margin: auto;width: 580px;" class="alert alert-danger"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>{{ Session::get('error') }}</div>
+@endif
+
     @endif
