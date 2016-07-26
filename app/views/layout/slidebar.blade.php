@@ -1,4 +1,4 @@
-<?php $slider = slider::orderBy('id', 'ASC')->get(); ?>
+<?php $slider = Slider::orderBy('id', 'ASC')->get(); ?>
 
 <div id="slideshow">
     <div class="fullwidthbanner-container">
