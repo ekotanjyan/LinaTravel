@@ -11,7 +11,7 @@
 									<div class="col-sm-6 col-md-3">
 										<article class="box">
 											<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-												<a href="info/cruises/{{$value->id}}" style="height: 270px;" class="hover-effect popup-gallery"><img src="{{URL::to($value->imgurl)}}"></a>
+												<a href="info/Cruises/{{$value->id}}" style="height: 270px;" class="hover-effect popup-gallery"><img src="{{URL::to($value->imgurl)}}"></a>
 											</figure>
 											<div class="details">
 												<span class="price"><small>from</small>{{$value->price}}</span>
@@ -96,7 +96,7 @@
 	                                        <div class="col-xs-4">
 	                                            <div class="box">
 													<figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-														<a href="info/cruises/{{$value->id}}" style="height: 189px;" class="hover-effect yellow popup-gallery"><img style="width: auto;height: 100%;" src="{{URL::to($value->imgurl)}}"></a>
+														<a href="info/Cruises/{{$value->id}}" style="height: 189px;" class="hover-effect yellow popup-gallery"><img style="width: auto;height: 100%;" src="{{URL::to($value->imgurl)}}"></a>
 													</figure>
 	                                                <div class="details">
 	                                                    <span class="price"><small>3 nights</small>$169</span>
@@ -116,7 +116,7 @@
 								@foreach($hotcruisesdeals as $value)
 	                            <li class="box">
 	                                <figure>
-	                                    <a class="hover-effect popup-gallery" href="info/cruises/{{$value->id}}" title="">{{ HTML::image($value->imgurl) }}</a>
+	                                    <a class="hover-effect popup-gallery" href="info/Cruises/{{$value->id}}" title="">{{ HTML::image($value->imgurl) }}</a>
 	                                </figure>
 	                                <div class="details text-center">
 	                                    <h4 class="box-title">{{$value->name}}</h4>

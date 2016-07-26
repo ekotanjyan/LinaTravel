@@ -15,7 +15,7 @@
 							<div class="col-sms-6 col-sm-6 col-md-3">
 								<article class="box">
 									<figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
-										<a href="info/mostpopulartours/{{$value->id}}" style=" height: 270; " title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,null,['width'=>'270','height'=>'160']) }}</a>
+										<a href="info/Mostpopulartours/{{$value->id}}" style=" height: 270; " title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,null,['width'=>'270','height'=>'160']) }}</a>
 									</figure>
 									<div class="details">
 										<span class="price"><small>FROM</small>{{$value->price}}</span>
@@ -173,7 +173,7 @@
 		                    <li style="width: 270px; float: left; display: block;">
 		                        <article class="box">
 		                            <figure >
-		                                <a style="height: 270px;" href="info/mostpopulartours/{{$value->id}}" class="hover-effect popup-gallery">
+		                                <a style="height: 270px;" href="info/Mostpopulartours/{{$value->id}}" class="hover-effect popup-gallery">
 											{{ HTML::image($value->imgurl)}}
 		                                </a>
 		                            </figure>

@@ -14,7 +14,7 @@
 	                        <div class="col-sms-6 col-sm-6 col-md-3">
 	                            <article class="box">
 	                                <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
-	                                    <a href="info/populardestinations/{{$value->id}}" style=" height: 270; " title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,$value->place ,['width'=>'270','height'=>'160']) }}</a>
+	                                    <a href="info/Populardestinations/{{$value->id}}" style=" height: 270; " title="" class="hover-effect popup-gallery">{{ HTML::image($value->imgurl,$value->place ,['width'=>'270','height'=>'160']) }}</a>
 	                                </figure>
 	                                <div class="details">
 	                                    <span class="price"><small>FROM</small>{{$value->price}}</span>
@@ -38,7 +38,7 @@
 	                            <div class="col-xs-4">
 	                                <article class="box">
 	                                    <figure >
-	                                        <a href="info/populardestinations/{{$value->id}}" title="" class="hover-effect yellow middle-block popup-gallery">
+	                                        <a href="info/Populardestinations/{{$value->id}}" title="" class="hover-effect yellow middle-block popup-gallery">
 												{{ HTML::image($value->imgurl) }}</a>
 	                                    </figure>
 	                                    <div class="details">
@@ -67,7 +67,7 @@
 	                        <div class="col-md-6">
 	                            <article class="box">
 	                                <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1">
-	                                    <a href="info/didyouknow/{{$value->id}}" title="">{{ HTML::image($value->imgurl)}}</a>
+	                                    <a href="info/Didyouknow/{{$value->id}}" title="">{{ HTML::image($value->imgurl)}}</a>
 	                                </figure>
 	                                <div class="details">
 	                                    <h4>{{$value->name}}</h4>
