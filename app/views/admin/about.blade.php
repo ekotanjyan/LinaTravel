@@ -145,6 +145,7 @@
                             a.find('#social').show();
                         }
                         console.log(msg);
+                        
                     })
                     .fail(function() {
                         console.log("error");
@@ -161,6 +162,8 @@
             else
                 $('#social').hide();
         });
+
+
     });
 
 </script>

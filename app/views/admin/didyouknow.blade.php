@@ -129,6 +129,7 @@
                         a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
+                        
 
                     })
                     .fail(function() {

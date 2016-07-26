@@ -139,9 +139,11 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                         a.find('#name').val(msg.name);
                         a.find('#place').val(msg.place);
                         a.find('#price').val(msg.price);
-                        a.find('#description').val(msg.description);
+                        a.find('#description').html(msg.description);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
+
+                        
 
                     })
                     .fail(function() {

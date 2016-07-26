@@ -154,6 +154,7 @@ $cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals']
                         a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
+                        
 
                     })
                     .fail(function() {

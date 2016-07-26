@@ -10,10 +10,22 @@
 <!-- DataTables JavaScript -->
 <script src="{{URL::asset('asset/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{URL::asset('asset/js/dataTables.bootstrap.min.js')}}"></script>
- <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+<script type="text/javascript">$(document).ready(function() {
+	    tinymce.init({
+        selector: "textarea",
+        statusbar: false,
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave();
+            });
+        }
+    });
+	// body...
+});</script>
 <!-- Custom Theme JavaScript -->
 
-<script>tinymce.init({ selector:'textarea' });</script>
+
 <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 
 </body>
