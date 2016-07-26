@@ -1,4 +1,4 @@
-<?php $table="MostPopularTours";
+<?php $table="Mostpopulartours";
 $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
 <div id="wrapper">
     <div id="page-wrapper">
@@ -47,11 +47,11 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                                         <td>{{$cat[$value->category]}}</td>
                                         <td>{{ HTML::image($value->imgurl) }}</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="Mostpopulartours" data-toggle="modal" data-target="#myModal">Edit</button>
+                                            <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="MostPopularTours" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <form action="admin/delete" method="post">
                                                 <input type="hidden" name="id" value="{{$value->id}}">
                                                 <input type="hidden" name="table" value="{{$table}}">
-                                                <button type="submit" class="btn btn-danger btn-lg" data-table="Mostpopulartours">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-lg" data-table="{{$table}}">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
