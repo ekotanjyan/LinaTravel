@@ -1,4 +1,4 @@
-<?php $table="Populardestinations";
+<?php $table="PopularDestinations";
 $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 <div id="wrapper">
     <div id="page-wrapper">
