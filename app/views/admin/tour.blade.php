@@ -87,6 +87,10 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                         {{Form::text('price', null,['id'=>'price','class'=>'form-control'])}}
                     </div>
                     <div class="form-group">
+                        {{Form::Label('description', 'Description:',['class'=>'form-control-label'])}}
+                        {{Form::textarea('description', null,['id'=>'description','class'=>'form-control'])}}
+                    </div>
+                    <div class="form-group">
                         {{Form::Label('category', 'Category:',['class'=>'form-control-label'])}}
                         {{Form::select('category', $cat, 0)}}
                     </div>
@@ -125,6 +129,7 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
                         a.find('#name').val(msg.name);
+                        a.find('#description').val(msg.description);
                         a.find('#price').val(msg.price);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
