@@ -10,7 +10,7 @@ class AdminController extends BaseController
 {
     public function index()
     {
-        $arr = ['Mostpopulartours','Partners','didyouknow','cruises','about','slider','Populardestinations'];
+        $arr = ['Mostpopulartours','Partners','Didyouknow','Cruises','About','Slider','Populardestinations'];
         switch (Input::get('r')){
             case 'tours':
                 $table = $arr[0];

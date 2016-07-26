@@ -1,4 +1,4 @@
-<?php $table="slider"; ?>
+<?php $table="Slider"; ?>
 <div id="wrapper">
     <div id="page-wrapper">
         <div class="row">

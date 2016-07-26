@@ -1,4 +1,4 @@
-<?php $table="cruises";
+<?php $table="Cruises";
 $cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals'];?>
 <div id="wrapper">
     <div id="page-wrapper">
@@ -40,7 +40,7 @@ $cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals']
                                         <td>{{Form::text('price', null,['id'=>'price','style'=>"width: 101px",'class'=>'form-control'])}}</td>
                                         <td>{{Form::textarea('description', null,['id'=>'description','cols'=>"20",'rows'=>"5",'class'=>'form-control'])}}</td>
                                         <td>{{Form::select('category', $cat, 0 ,['style'=>"width: 101px"])}}</td>
-                                        <td><input type="date" name="start_date" style="width: 101px" class="form-control"></td>
+                                        <td><input type="text" id="start_date" name="start_date" style="width: 101px" class="form-control"></td>
                                         <td>{{Form::text('days', null,['id'=>'days','style'=>"width: 101px",'class'=>'form-control'])}}</td>
                                         <td><label for="file">Max Size 2MB</label>{{Form::file('file',['id'=>'file','style'=>"width: 145px",'class'=>'form-control','accept'=>'image/jpeg'])}}</td>
                                         <td><input  value="Add" type="submit" class="btn btn-success btn-lg"></td>
@@ -134,6 +134,7 @@ $cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals']
         $('#dataTables-example').DataTable({
             responsive: true
         });
+        $('#start_date').datepicker({ dateFormat: 'yy-mm-dd' });
 
         $('.gradeA button').click(function(){
             $.ajax({

@@ -1,6 +1,7 @@
 
 
 <!-- Bootstrap Core JavaScript -->
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script src="{{URL::asset('asset/js/bootstrap.min.js')}}"></script>
 
 <!-- Metis Menu Plugin JavaScript -->

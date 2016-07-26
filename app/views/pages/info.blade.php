@@ -2,5 +2,5 @@
     {{ HTML::image($value->imgurl) }}
 </div>
 <div class="image-carousel style1" id="image-carousel1" data-animation="slide" data-item-width="70" data-item-margin="10" data-sync="#photo-gallery1">
-<p>{{$value->description}}ssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdfssdf sdf sdf</p>
+<p>{{$value->description}}</p>
 </div>

@@ -1,4 +1,4 @@
-<?php $table="didyouknow";
+<?php $table="Mostpopulartours";
 $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
 <div id="wrapper">
     <div id="page-wrapper">
@@ -32,7 +32,7 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
 
                                 <tr class="gradeA">
                                     <form action="admin/add" method="post" lpformnum="2" enctype="multipart/form-data">
-                                        <input type="hidden" class="form-control" name="table" id="table" value="Mostpopulartours">
+                                        <input type="hidden" class="form-control" name="table" id="table" value="{{$table}}">
                                         <td><input type="text" class="form-control" name="name" id="name"></td>
                                         <td><input type="text" class="form-control" name="price" id="price"></td>
                                         <td>{{Form::select('category', $cat, 0)}}</td>
@@ -50,7 +50,7 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                                             <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="mostpopulartours" data-toggle="modal" data-target="#myModal">Edit</button>
                                             <form action="admin/delete" method="post">
                                                 <input type="hidden" name="id" value="{{$value->id}}">
-                                                <input type="hidden" name="table" value="Mostpopulartours">
+                                                <input type="hidden" name="table" value="{{$table}}">
                                                 <button type="submit" class="btn btn-danger btn-lg" data-table="mostpopulartours">Delete</button>
                                             </form>
                                         </td>
@@ -77,7 +77,7 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                 </div><div class="modal-body">
                     {{ Form::open(array('url' => 'admin/update','method'=>'post','enctype'=>'multipart/form-data')) }}
                     {{Form::hidden('id', null,['id'=>'id','class'=>'form-control'])}}
-                    {{Form::hidden('table', 'Mostpopulartours',['class'=>'form-control'])}}
+                    {{Form::hidden('table', $table,['class'=>'form-control'])}}
                     <div class="form-group">
                         {{Form::Label('name', 'Name:',['class'=>'form-control-label'])}}
                         {{Form::text('name', null,['id'=>'name','class'=>'form-control'])}}

@@ -1,4 +1,4 @@
-<?php $table="didyouknow";
+<?php $table="Didyouknow";
  $cat = ['Did you know?','Features', 'Travel Guide and Tips'];?>
 <div id="wrapper">
     <div id="page-wrapper">

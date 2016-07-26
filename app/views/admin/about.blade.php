@@ -1,4 +1,4 @@
-<?php $table="about";
+<?php $table="About";
  $cat = ['About us','Travelo Dedicated Team','Check our Investors Relations'];?>
 <div id="wrapper">
     <div id="page-wrapper">
