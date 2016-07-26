@@ -12,15 +12,15 @@
 <script src="{{URL::asset('asset/js/dataTables.bootstrap.min.js')}}"></script>
 <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
 <script type="text/javascript">$(document).ready(function() {
-	    tinymce.init({
-        selector: "textarea",
-        statusbar: false,
-        setup: function (editor) {
-            editor.on('change', function () {
-                tinymce.triggerSave();
-            });
-        }
-    });
+	   //  tinymce.init({
+    //     selector: "textarea",
+    //     statusbar: false,
+    //     setup: function (editor) {
+    //         editor.on('change', function () {
+    //             tinymce.triggerSave();
+    //         });
+    //     }
+    // });
 	// body...
 });</script>
 <!-- Custom Theme JavaScript -->

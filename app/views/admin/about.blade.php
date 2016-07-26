@@ -135,7 +135,9 @@
                         a.find('#social').hide();
                         a.find('#id').val(msg.id);
                         a.find('#name').val(msg.name);
-                        a.find('#description').val(msg.description);
+                        a.find('.mce-panel').remove();
+                        a.find('#description').val(msg.description).show();
+
                         a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
                         if(msg.category==1) {
@@ -145,7 +147,15 @@
                             a.find('#social').show();
                         }
                         console.log(msg);
-                        
+                            tinymce.init({
+        selector: "textarea",
+        statusbar: false,
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave();
+            });
+        }
+    });
                     })
                     .fail(function() {
                         console.log("error");

@@ -134,16 +134,26 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                 data: {id: $(this).data('id'),table:$(this).data('table')}
             })
                     .done(function(msg) {
+
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
+                        a.find('.mce-panel').remove();
                         a.find('#name').val(msg.name);
                         a.find('#place').val(msg.place);
                         a.find('#price').val(msg.price);
-                        a.find('#description').html(msg.description);
+                        a.find('#description').html(msg.description).show();
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
+    tinymce.init({
+        selector: "textarea",
+        statusbar: false,
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave();
+            });
+        }
+    });
 
-                        
 
                     })
                     .fail(function() {

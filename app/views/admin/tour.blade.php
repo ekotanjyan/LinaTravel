@@ -129,10 +129,20 @@ $cat = ['Most Popular Tour Packages', 'Last Minute Packages'];?>
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
                         a.find('#name').val(msg.name);
-                        a.find('#description').val(msg.description);
+                        a.find('.mce-panel').remove();
+                        a.find('#description').val(msg.description).show();
                         a.find('#price').val(msg.price);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
+                            tinymce.init({
+        selector: "textarea",
+        statusbar: false,
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave();
+            });
+        }
+    });
 
                     })
                     .fail(function() {

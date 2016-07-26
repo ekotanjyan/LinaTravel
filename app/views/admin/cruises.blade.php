@@ -147,14 +147,24 @@ $cat = ['Last Minute Cruise Deals', 'Top Cruise Line Deals','Hot Cruises Deals']
                         var a = $('#myModal');
                         a.find('#id').val(msg.id);
                         a.find('#days').val(msg.days);
+                        a.find('.mce-panel').remove();
                         a.find('#price').val(msg.price);
                         a.find('#start_date').val(msg.start_date);
                         a.find('#name').val(msg.name);
-                        a.find('#description').val(msg.description);
+                        a.find('#description').val(msg.description).show();
                         a.find('#category').val(msg.category);
                         a.find('#imgurl').val(msg.imgurl);
                         console.log(msg);
-                        
+                        console.log(msg);
+                            tinymce.init({
+        selector: "textarea",
+        statusbar: false,
+        setup: function (editor) {
+            editor.on('change', function () {
+                tinymce.triggerSave();
+            });
+        }
+    });
 
                     })
                     .fail(function() {
