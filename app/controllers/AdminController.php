@@ -43,11 +43,10 @@ class AdminController extends BaseController
     }
     public function info()
     {
-        if (Input::get('id') !=""){
-
+        
             $data = DB::table(strtolower(Input::get('table')))->where('id',Input::get('id'))->first();
             return json_encode($data);
-        }
+
         
     }
     public function add()
