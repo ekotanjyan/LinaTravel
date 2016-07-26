@@ -21,7 +21,7 @@ Route::get('aboutus', 'HomeController@aboutus');
 Route::get('contactus', 'HomeController@contactus');
 Route::get('admin', 'AdminController@index');
 Route::post('login_form', 'HomeController@login_form');
-Route::post('admin/info', 'AdminController@info');
+Route::match(['get', 'post'],'admin/info', 'AdminController@info');
 Route::post('admin/update', 'AdminController@update');
 Route::post('admin/add', 'AdminController@add');
 Route::post('admin/delete', 'AdminController@delete');
