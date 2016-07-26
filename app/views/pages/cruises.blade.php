@@ -14,7 +14,7 @@
 												<a href="info/Cruises/{{$value->id}}" style="height: 270px;" class="hover-effect popup-gallery"><img src="{{URL::to($value->imgurl)}}"></a>
 											</figure>
 											<div class="details">
-												<span class="price"><small>from</small>{{$value->price}}</span>
+												<span class="price"><small>from</small>{{$value->price}}֏</span>
 												<h4 class="box-title">{{$value->name}}<small>{{$value->days}} nights</small></h4>
 												{{--<div class="feedback">--}}
 													{{--<div data-placement="bottom" data-toggle="tooltip" class="five-stars-container" title="3 stars"><span style="width: 60%;" class="five-stars"></span></div>--}}
@@ -99,7 +99,7 @@
 														<a href="info/Cruises/{{$value->id}}" style="height: 189px;" class="hover-effect yellow popup-gallery"><img style="width: auto;height: 100%;" src="{{URL::to($value->imgurl)}}"></a>
 													</figure>
 	                                                <div class="details">
-	                                                    <span class="price"><small>3 nights</small>$169</span>
+	                                                    <span class="price"><small>{{$value->days}} nights</small>{{$value->price}}֏</span>
 	                                                    <h5 class="box-title"><a href="#">{{$value->name}}</a><small>Up to $400 OFF!</small></h5>
 	                                                </div>
 	                                            </div>
