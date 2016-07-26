@@ -124,7 +124,6 @@
 	                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom">
 	                                        <span class="five-stars" style="width: 80%;"></span>
 	                                    </div>
-	                                    <p class="description">{{$value->description}}</p>
 	                                    <a href="cruise-detailed.html" class="button">SEE ALL</a>
 	                                </div>
 	                            </li>
