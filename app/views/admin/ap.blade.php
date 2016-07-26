@@ -1,4 +1,4 @@
-<?php $table="PopularDestinations";
+<?php $table="Populardestinations";
 $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
 <div id="wrapper">
     <div id="page-wrapper">
@@ -51,7 +51,7 @@ $cat = ['Popular Destinations', 'Popular Destinations for Honeymoon'];?>
                                     <td>{{$cat[$value->category]}}</td>
                                     <td>{{ HTML::image($value->imgurl,$value->place) }}</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="{{$table}}" data-toggle="modal" data-target="#myModal">Edit</button>
+                                        <button type="button" class="btn btn-primary btn-lg" data-id="{{$value->id}}" data-table="PopularDestinations" data-toggle="modal" data-target="#myModal">Edit</button>
                                         <form action="admin/delete" method="post">
                                             <input type="hidden" name="id" value="{{$value->id}}">
                                             <input type="hidden" name="table" value="{{$table}}">
